@@ -1,0 +1,28 @@
+# Create a Python distribution
+./distribute.sh -m "pyjnius kivy"
+
+# Packaging (APK)
+#./build.py --dir <path to your app>
+#           --name "<title>"
+#           --package <org.of.your.app>
+#           --version <human version>
+#           --icon <path to an icon to use>
+#           --orientation <landscape|portrait>
+#           --permission <android permission like VIBRATE> (multiple allowed)
+#           <debug|release> <installd|installr|...>
+
+./build.py --dir /home/pvergil/Projects/Python/Desktop/kivy/login       \
+--presplash /home/pvergil/Projects/Python/Desktop/kivy/login/splash.jpg \
+--icon /home/pvergil/Projects/Python/Desktop/kivy/login/icon.png        \
+--install-location preferExternal \
+--package com.chigigo.login       \
+--orientation portrait            \
+--name "Sample Login"             \
+--version 0.1                     \
+debug
+
+# Installing the package
+./adb install -r /home/pvergil/Apps/python-for-android/dist/default/bin/SampleLogin-0.1-debug.apk
+
+# Launching the Android emulator
+emulator -avd <avd_name> -gpu on

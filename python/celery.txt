@@ -1,0 +1,9 @@
+####################################
+# django-celery
+####################################
+
+# Running scheduler
+python manage.py celery beat --loglevel=INFO
+
+# Running worker
+python manage.py celery worker --loglevel=INFO

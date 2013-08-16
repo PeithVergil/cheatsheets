@@ -1,0 +1,55 @@
+####################################
+# django-haystack
+####################################
+
+##########################
+# Installation
+pip install django-haystack
+
+##########################
+# Add to INSTALLED_APPS
+INSTALLED_APPS = (
+    ...
+    'haystack',
+)
+
+##########################
+# Add to settings.py
+HAYSTACK_SEARCH_ENGINE = 'whoosh'
+HAYSTACK_WHOOSH_PATH = os.path.join(PROJECT_DIR, 'whoosh_index')
+HAYSTACK_SITECONF = 'myproject.searchsites'
+
+##########################
+# Create a search site (eg: myproject/searchsites.py)
+import haystack
+# Search through all of INSTALLED_APPS for search_indexes.py
+# and register all SearchIndex classes.
+haystack.autodiscover()
+
+##########################
+# Create a SearchIndex class (eg: myapp/search_indexes.py)
+from haystack import indexes, site
+from myapp.models import MyModel
+
+class MyModelIndex(indexes.SearchIndex):
+    text = indexes.CharField(document=True, use_template=True)
+
+site.register(MyModel, MyModelIndex)
+
+##########################
+# Create an index template (eg: templates/search/indexes/myapp/mymodel_text.txt)
+{{ object.title }}
+{{ object.author }}
+{{ object.content }}
+
+##########################
+# Add the haystack urls
+(r'^search/', include('haystack.urls')),
+
+##########################
+# Build the indexes
+python manage.py rebuild_index
+
+##########################
+# Update the indexes
+python manage.py update_index

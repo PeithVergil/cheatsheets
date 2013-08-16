@@ -1,0 +1,88 @@
+####################################
+# SUPERVISOR
+####################################
+
+##########################
+### Installing supervisor
+easy_install supervisor
+
+##########################
+### Printing config
+echo_supervisord_conf
+
+##########################
+### Creating a config file
+echo_supervisord_conf > /etc/supervisord.conf
+
+##########################
+### Creating a supervisor program in supervisord.conf
+[program:djangoapp]
+directory=/home/pvergil/Projects/Python/Django/pev
+command=/home/pvergil/Apps/pyenv/py1/bin/gunicorn --workers=2 --bind=0.0.0.0:8000 pev.wsgi:application
+user=pvergil
+autostart=true
+autorestart=true
+redirect_stderr=True
+
+##########################
+### Running supervisord
+supervisord
+
+# Run supervisord in the foreground
+supervisord -n
+
+# The path to a supervisord configuration file
+supervisord -c /path/to/supervisord.conf
+
+##########################
+### Running supervisorctl
+supervisorctl
+
+# List supervisor processes
+supervisorctl> status
+
+# Stopping a process
+supervisorctl> stop PROCESS_NAME
+
+# Starting a process
+supervisorctl> start PROCESS_NAME
+
+# Exit supervisorctl
+supervisorctl> exit
+
+##########################
+### Shutting down supervisord
+supervisorctl> shutdown
+
+####################################
+# INIT.D
+####################################
+# Supervisord auto-start
+#
+# description: Auto-starts supervisord
+# processname: supervisord
+# pidfile: /var/run/supervisord.pid
+
+SUPERVISORD=/usr/bin/supervisord
+SUPERVISORCTL=/usr/bin/supervisorctl
+
+case $1 in
+start)
+        echo -n "Starting supervisord: "
+        $SUPERVISORD
+        echo
+        ;;
+stop)
+        echo -n "Stopping supervisord: "
+        $SUPERVISORCTL shutdown
+        echo
+        ;;
+restart)
+        echo -n "Stopping supervisord: "
+        $SUPERVISORCTL shutdown
+        echo
+        echo -n "Starting supervisord: "
+        $SUPERVISORD
+        echo
+        ;;
+esac

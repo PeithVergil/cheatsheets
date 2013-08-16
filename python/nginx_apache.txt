@@ -1,0 +1,107 @@
+####################################
+# Apache
+####################################
+# /etc/apache2/ports.conf
+Listen 127.0.0.1:8080
+
+# /etc/apache2/sites-enabled/default
+NameVirtualHost 127.0.0.1
+
+<VirtualHost 127.0.0.1:8080>
+    ServerAdmin admin@sample.com
+    ServerName www.sample.com
+    ServerAlias sample.com
+
+    WSGIDaemonProcess sample.com user=peith group=peith processes=2 threads=25
+    WSGIProcessGroup sample.com
+
+    <Directory />
+        Options FollowSymLinks
+        AllowOverride All
+    </Directory>
+
+    #Alias /media/ /home/peith/projects/sample/media/
+    #<Directory /home/peith/projects/sample/media/>
+    #    Order deny,allow
+    #    Allow from all
+    #</Directory>
+
+    #Alias /static/ /home/peith/projects/sample/static/
+    #<Directory /home/peith/projects/sample/static/>
+    #    Order deny,allow
+    #    Allow from all
+    #</Directory>
+
+    WSGIScriptAlias / /home/peith/projects/sample/sample/wsgi.py
+    <Directory /home/peith/projects/sample/sample/>
+        Order allow,deny
+        Allow from all
+    </Directory>
+
+    DocumentRoot /home/peith/projects/sample/
+    ErrorLog /home/peith/projects/sample/logs/error.log
+    CustomLog /home/peith/projects/sample/logs/access.log combined
+    LogLevel warn
+</VirtualHost>
+
+####################################
+# Nginx
+####################################
+# /etc/nginx/nginx.conf
+user www-data;
+worker_processes 2;
+pid /var/run/nginx.pid;
+
+events {
+	worker_connections  1024;
+}
+
+http {
+	include            /etc/nginx/mime.types;
+	default_type       application/octet-stream;
+	access_log         /var/log/nginx/access.log;
+	sendfile           on;
+	tcp_nopush         on;
+	keepalive_timeout  65;
+	tcp_nodelay        on;
+	gzip               on;
+	include /etc/nginx/conf.d/*.conf;
+	include /etc/nginx/sites-enabled/*;
+}
+
+# /etc/nginx/proxy.conf
+proxy_redirect              off;
+proxy_set_header            Host $host;
+proxy_set_header            X-Real-IP $remote_addr;
+proxy_set_header            X-Forwarded-For $proxy_add_x_forwarded_for;
+client_max_body_size        10m;
+client_body_buffer_size     128k;
+proxy_connect_timeout       90;
+proxy_send_timeout          90;
+proxy_read_timeout          90;
+proxy_buffer_size           4k;
+proxy_buffers               4 32k;
+proxy_busy_buffers_size     64k;
+proxy_temp_file_write_size  64k;
+
+# /etc/nginx/sites-available/default
+server {
+	listen   192.168.0.180:80;
+
+	server_name www.sample.com sample.com;
+	access_log /home/peith/projects/sample/logs/nginx_access.log;
+	error_log /home/peith/projects/sample/logs/nginx_error.log;
+
+	location / {
+		proxy_pass  http://192.168.0.180:8080;
+		include     /etc/nginx/proxy.conf;
+	}
+
+	location  /media/ {
+		root /home/peith/projects/sample/;
+	}
+
+	location  /static/ {
+		root /home/peith/projects/sample/;
+	}
+}

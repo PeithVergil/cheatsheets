@@ -1,0 +1,25 @@
+assert – base assert allowing you to write your own assertions
+
+# check a and b are equal
+assertEqual(a, b)
+
+# check a and b are not equal
+assertNotEqual(a, b)
+
+# check that a is in the item b
+assertIn(a, b)
+
+# check that a is not in the item b
+assertNotIn(a, b)
+
+# check that the value of a is False
+assertFalse(a)
+
+# check the value of a is True
+assertTrue(a)
+
+# check that a is of type “TYPE”
+assertIsInstance(a, TYPE)
+
+# check that when a is called with args
+assertRaises(ERROR, a, args)

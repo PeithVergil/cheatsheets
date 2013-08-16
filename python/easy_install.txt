@@ -1,0 +1,8 @@
+####################################
+# easy_install (setuptools)
+####################################
+
+##########################
+# Installation
+sudo apt-get install python-setuptools python-dev build-essential
+sudo apt-get install python-setuptools

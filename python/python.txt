@@ -1,0 +1,71 @@
+########################################
+## Installing MySQL driver
+##
+
+## Install dependencies
+sudo apt-get install build-essential python-dev libmysqlclient-dev
+
+## Install package
+pip install mysql-python
+
+########################################
+## Creating Python extensions using C/C++ and SWIG
+##
+
+/*
+ * ========================================
+ * hello.h
+ * ========================================
+ */
+#include <stdio.h>
+
+void hello(char *name);
+/*
+ * ========================================
+ * End of hello.h
+ * ========================================
+ */
+
+/*
+ * ========================================
+ * hello.c
+ * ========================================
+ */
+#include "hello.h"
+
+void hello(char *name) {
+	printf("Hello, %s!\n", name);
+}
+/*
+ * ========================================
+ * End of hello.c
+ * ========================================
+ */
+
+/*
+ * ========================================
+ * hello.i
+ * ========================================
+ */
+%module hello
+%{
+	/* Includes the header in the wrapper code */
+	#include "hello.h"
+%}
+
+/* Parse the header file to generate wrappers */
+%include "hello.h"
+/*
+ * ========================================
+ * End of hello.i
+ * ========================================
+ */
+
+# Generate wrapper
+swig -python hello.i
+
+# Compile using GCC
+gcc -c hello.c hello_wrap.c -I/usr/include/python2.7
+
+# Create a shared library
+ld -shared hello.o hello_wrap.o -o _hello.so
