@@ -21,21 +21,21 @@ Nginx Cheatsheet
 
     *   Create a server key with a passphrase.
 
-        openssl genrsa -des3 -out server.key 1024
+        `openssl genrsa -des3 -out server.key 1024`
 
     *   Rename the server key with a passphrase.
 
-        mv server.key server.key.orig
+        `mv server.key server.key.orig`
 
     *   Create a server key without a passphrase.
 
-        openssl rsa -in server.key.orig -out server.key
+        `openssl rsa -in server.key.orig -out server.key`
 
     *   Create the certificate signing request. You can submit the CSR file to a CA for signing.
 
-        openssl req -new -key server.key -out server.csr
+        `openssl req -new -key server.key -out server.csr`
 
-3.  Create a self-signed the SSL certificate
+3.  Create a self-signed certificate
 
     `openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt`
 
