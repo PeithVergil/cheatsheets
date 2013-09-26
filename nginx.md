@@ -55,21 +55,27 @@ Nginx Cheatsheet
 
     *   Edit the Nginx configuration file. Setup Nginx to use the SSL certificate.
 
-            server {
-                server_name  example.com;
-                listen       443;
+            http {
+                ssl_session_cache    shared:SSL:10m;
+                ssl_session_timeout  10m;
 
-                root /usr/share/nginx/www;
-                index index.html index.htm;
+                # Redirect HTTP requests to HTTPS
+                server {
+                    listen       80;
+                    server_name  example.com
+                    return       301 https://example.com$request_uri;
+                }
 
-                ssl on;
-                ssl_certificate /etc/nginx/ssl/server.crt;
-                ssl_certificate_key /etc/nginx/ssl/server.key;
-            }
+                server {
+                    listen             443 ssl;
+                    server_name        example.com;
+                    keepalive_timeout  70;
 
-            # Redirect HTTP traffic to HTTPS
-            server {
-                server_name  example.com
-                listen       80;
-                return       301 https://example.com$request_uri;
+                    root   /usr/share/nginx/www;
+                    index  index.html index.htm;
+
+                    ssl                  on;
+                    ssl_certificate      /etc/nginx/ssl/server.crt;
+                    ssl_certificate_key  /etc/nginx/ssl/server.key;
+                }
             }

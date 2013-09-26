@@ -1,5 +1,5 @@
-Vagrant Cheatsheet
-==================
+Vagrant
+=======
 
 ### Adding boxes
     vagrant box add precise32 http://cloud-images.ubuntu.com/precise/current/precise-server-cloudimg-vagrant-i386-disk1.box
