@@ -1,26 +1,34 @@
-Git Cheatsheet
-==============
+Git 
+===
 
-### Installation
+## Installation
 `sudo apt-get install git-core`
 
-### Generate SSH key
-`ssh-keygen -t rsa -C "your_email@youremail.com"`
+## Generate SSH key
+`ssh-keygen -t rsa -C "youremail@yourdomain.com"`
 
-### Setting configurations
+## Setting configurations
     git config --global color.ui true
     git config --global core.editor vi
-    git config --global user.name "Peith Vergil"
-    git config --global user.email "peith.vergil@gmail.com"
+    git config --global user.name "Your Name"
+    git config --global user.email "youremail@yourdomain.com"
 
-### Viewing revisions
-`git log --graph`
+## Viewing revisions
+    git log
+    git log --graph
 
-### Merging branches
+## Merging branches
 `git merge --no-ff dev-branch`
 
-### Edit the last commit message
+## Edit the last commit message
 `git commit --amend -m "New commit message"`
 
-### Show changes to commit
+## Show changes to commit
 `git diff-tree --no-commit-id --name-only -r bd61ad98`
+
+## Set a default remote branch
+`git branch --set-upstream master origin/master`
+
+
+## Update the URL of the remote branch
+`git remote set-url origin git://new.url.here`
