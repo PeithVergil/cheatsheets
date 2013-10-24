@@ -132,7 +132,10 @@ Installing the LAMP stack
 `sudo apt-get update`
 
 #### Install Apache
-`sudo apt-get install apache2`
+1.  Install the apache server
+        sudo apt-get install apache2
+2.  Enable apache's mod_rewrite
+        sudo a2enmod rewrite
 
 #### Install MySQL
 `sudo apt-get install mysql-server`
