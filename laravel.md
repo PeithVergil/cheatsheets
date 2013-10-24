@@ -2,6 +2,16 @@ Laravel 4
 =========
 
 
+Composer
+--------------------------------------------------
+
+##### Installing composer
+1.  Download the composer executable
+        curl -sS https://getcomposer.org/installer | php
+2.  Move the executable where it can be accessed globally
+        sudo mv composer.phar /usr/local/bin/composer
+
+
 Projects
 --------------------------------------------------
 
