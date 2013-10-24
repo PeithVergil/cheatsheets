@@ -149,4 +149,15 @@ Installing the LAMP stack
     Include /etc/phpmyadmin/apache.conf
 
 #### Installing phpPgAdmin
-`sudo apt-get install phppgadmin`
+1.  Download and install phpPgAdmin
+        sudo apt-get install phppgadmin
+2.  Edit the phpPgAdmin configuration file
+        sudo vim /etc/apache2/conf.d/phppgadmin
+3.  Uncomment the following line
+        # allow from all
+3.  Edit the Apache configuration file
+        sudo vim /etc/apache2/apache2.conf
+4.  Add the following code at the end of the Apache configuration file
+        Include /etc/phppgadmin/apache.conf
+5.  Restart the Apache server
+        sudo service apache2 restart
