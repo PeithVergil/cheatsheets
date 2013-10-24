@@ -125,17 +125,25 @@ sudo apt-file search add-apt-repository package
 ## When completed, retry installing the PPA package
 sudo apt-get install software-properties-common
 
-####################################
-# LAMP Stack
-####################################
-## Install Apache
-sudo apt-get install apache2
+Installing the LAMP stack
+--------------------------------------------------
 
-## Install mod_wsgi
-sudo apt-get install libapache2-mod-wsgi
+#### Update the repo
+`sudo apt-get update`
 
-## Install mod_php5
-sudo apt-get install libapache2-mod-php5
+#### Install Apache
+`sudo apt-get install apache2`
 
-## Install PHP5
-sudo apt-get install php5
+#### Install MySQL
+`sudo apt-get install mysql-server`
+
+#### Install PHP5
+`sudo apt-get install php5 php5-curl php5-mysql php5-mcrypt`
+
+#### Install mod_php5
+    sudo apt-get install libapache2-mod-php5
+
+#### Installing phpMyAdmin
+    sudo apt-get install phpmyadmin
+    sudo vim /etc/apache2/apache2.conf
+    Include /etc/phpmyadmin/apache.conf

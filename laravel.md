@@ -1,8 +1,8 @@
-Laravel
-=======
+Laravel 4
+=========
 
 
-Project
+Projects
 --------------------------------------------------
 
 ##### Creating a project
@@ -27,3 +27,20 @@ Migrations
 
 ##### Running all outstanding migrations
 `php artisan migrate`
+
+
+Autoloading Libraries
+--------------------------------------------------
+1.  Edit the **composer.json** file. Add the path to your library folder in the *classmap* list.
+        "autoload": {
+            "classmap": [
+                "app/commands",
+                "app/controllers",
+                "app/libraries",
+                "app/models",
+                "app/database/migrations",
+                "app/tests/TestCase.php"
+            ],
+        },
+2.  Enter the following command at the command line:
+        composer dump-autoload
