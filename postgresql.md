@@ -17,7 +17,7 @@ Psql Client
 `\q`
 
 
-Users and Groups
+Users, Groups, and Privileges
 --------------------------------------------------
 
 #### Creating a user
@@ -34,6 +34,12 @@ Users and Groups
 
 #### Change user password
 `\password myusername`
+
+#### Another way of creating a user
+`CREATE USER myusername WITH PASSWORD 'mypassword';`
+
+#### Granting privileges to the new user
+`GRANT ALL ON DATABASE mydatabase TO myusername;`
 
 
 Databases
@@ -57,3 +63,20 @@ Databases
 
 #### Importing an SQL dump
 `sudo -u postgres psql mydatabase < mydatabasedump`
+
+
+Backup and Restore
+--------------------------------------------------
+
+#### Options
+*   **-h, --host=HOSTNAME**      database server host or socket directory
+*   **-U, --username=NAME**      connect as specified database user
+*   **-p, --port=PORT**          database server port number
+*   **-F, --format=c|d|t|p**     output file format (custom, directory, tar, plain text)
+*   **-b, --blobs**              include large objects in dump
+*   **-v, --verbose**            verbose mode
+*   **-f, --file=FILENAME**      output file or directory name
+
+
+#### Create a plain text backup of a single database
+`pg_dump -h localhost -U myusername -p 5432 -F p -b -v -f mydatabase.backup mydatabase`
