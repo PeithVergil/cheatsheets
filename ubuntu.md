@@ -1,5 +1,5 @@
-Ubuntu Cheatsheet
-=================
+Ubuntu
+======
 
 ## Get system info
 `uname -a`

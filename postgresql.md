@@ -70,13 +70,22 @@ Backup and Restore
 
 #### Options
 *   **-h, --host=HOSTNAME**      database server host or socket directory
-*   **-U, --username=NAME**      connect as specified database user
 *   **-p, --port=PORT**          database server port number
+*   **-U, --username=NAME**      connect as specified database user
 *   **-F, --format=c|d|t|p**     output file format (custom, directory, tar, plain text)
 *   **-b, --blobs**              include large objects in dump
 *   **-v, --verbose**            verbose mode
 *   **-f, --file=FILENAME**      output file or directory name
 
 
-#### Create a plain text backup of a single database
-`pg_dump -h localhost -U myusername -p 5432 -F p -b -v -f mydatabase.backup mydatabase`
+#### Create a plain text backup
+`pg_dump -h localhost -p 5432 -U myusername -F p -b -v -f mydatabase.sql mydatabase`
+
+#### Create a plain text backup of a set of tables
+`pg_dump -h localhost -p 5432 -U myusername -F p -b -v -t mytable1 -t mytable2 -t mytable3 -f mydatabase.sql mydatabase`
+
+#### Restore a plain text backup
+`psql -U postgres -f mydatabase.sql`
+
+#### Restore a plain text backup to a specific database
+`psql -U postgres -d mydatabase -f mydatabase.sql`

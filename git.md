@@ -33,7 +33,7 @@ Branches
 ## Edit the last commit message
 `git commit --amend -m "New commit message"`
 
-## Show changes to commit
+## Show changes to a commit
 `git diff-tree --no-commit-id --name-only -r bd61ad98`
 
 ## Set a default remote branch
