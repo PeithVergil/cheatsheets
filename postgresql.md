@@ -1,18 +1,24 @@
 PostgreSQL
 ==========
 
-## Installation
+
+Installation
+--------------------------------------------------
 `sudo apt-get install postgresql postgresql-contrib`
 
 
-## Run client
+Psql Client
+--------------------------------------------------
+
+#### Running psql
 `sudo -u postgres psql`
 
-## Exit client
+#### Exiting psql
 `\q`
 
 
-## Creating users and groups
+Users and Groups
+--------------------------------------------------
 
 #### Creating a user
 `CREATE ROLE myusername LOGIN PASSWORD 'mypassword' CREATEDB VALID UNTIL 'infinity';`
@@ -26,22 +32,28 @@ PostgreSQL
 #### Assigning a user to a group
 `GRANT mygroup TO myusername;`
 
-
-## Change user password
+#### Change user password
 `\password myusername`
 
-## Creating a database
-`sudo -u postgres createdb [mydatabase]`
 
-## Deleting a database
-`sudo -u postgres dropdb [mydatabase]`
+Databases
+--------------------------------------------------
 
-## Selecting database
+#### Creating a database
+`sudo -u postgres psql createdb [mydatabase]`
+
+#### Deleting a database
+`sudo -u postgres psql dropdb [mydatabase]`
+
+#### Selecting database
 `sudo -u postgres psql [mydatabase]`
 
-## Listing databases
+#### Listing databases
 `[mydatabase]=# \l`
 
-## Listing tables
+#### Listing tables
     [mydatabase]=# \d+
     [mydatabase]=# \d
+
+#### Importing an SQL dump
+`sudo -u postgres psql mydatabase < mydatabasedump`
