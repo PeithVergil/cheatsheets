@@ -14,16 +14,16 @@ PostgreSQL
 
 ## Creating users and groups
 
-### Creating a user
+#### Creating a user
 `CREATE ROLE myusername LOGIN PASSWORD 'mypassword' CREATEDB VALID UNTIL 'infinity';`
 
-### Creating a super user
+#### Creating a super user
 `CREATE ROLE myusername LOGIN PASSWORD 'mypassword' SUPERUSER VALID UNTIL '2020-10-20 20:00';`
 
-### Creating a group
+#### Creating a group
 `CREATE ROLE mygroup INHERIT;`
 
-### Assigning a user to a group
+#### Assigning a user to a group
 `GRANT mygroup TO myusername;`
 
 
