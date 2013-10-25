@@ -17,8 +17,18 @@ Git
     git log
     git log --graph
 
-## Merging branches
+
+Branches
+--------------------------------------------------
+#### Merging branches
 `git merge --no-ff dev-branch`
+
+#### Creating a new branch
+`git branch newbranch` or `git checkout -b newbranch`
+
+#### Creating a tracking branch
+`git branch --track newbranch origin/master`
+
 
 ## Edit the last commit message
 `git commit --amend -m "New commit message"`
