@@ -70,13 +70,13 @@ Databases
 --------------------------------------------------
 
 #### Creating a database
-`sudo -u postgres createdb [mydatabase]`
+`sudo -u postgres createdb mydatabase`
 
 #### Deleting a database
-`sudo -u postgres dropdb [mydatabase]`
+`sudo -u postgres dropdb mydatabase`
 
 #### Selecting database
-`sudo -u postgres psql [mydatabase]`
+`sudo -u postgres psql mydatabase`
 
 #### Listing databases
 `[mydatabase]=# \l`
