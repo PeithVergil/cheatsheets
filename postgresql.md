@@ -10,21 +10,41 @@ Installation
 Psql Client
 --------------------------------------------------
 
+##### Options for `psql`
+*   **-U, --username=USERNAME**
+*   **-h, --host=HOSTNAME**
+*   **-p, --port=PORT**
+*   **-W, --password**
+
 #### Running psql
 `sudo -u postgres psql`
 
-#### Exiting psql
+#### Quiting psql
 `\q`
 
 
 Users, Groups, and Privileges
 --------------------------------------------------
 
-#### Creating a user
-`CREATE ROLE myusername LOGIN PASSWORD 'mypassword' CREATEDB VALID UNTIL 'infinity';`
+##### Options for `createuser`
+*   **-d, --createdb**
+*   **-D, --no-createdb**
+*   **-r, --createrole**
+*   **-R, --no-createrole**
+*   **-s, --superuser**
+*   **-S, --no-superuser**
+*   **-P, --pwprompt**
+*   **-e, --echo**
 
-#### Creating a super user
-`CREATE ROLE myusername LOGIN PASSWORD 'mypassword' SUPERUSER VALID UNTIL '2020-10-20 20:00';`
+#### Creating a user using the `createuser` command line utility
+`sudo -u postgres createuser -D -R -P -S -e myusername`
+
+#### Creating a super user using the `createuser` command line utility
+`sudo -u postgres createuser -P -s -e myusername`
+
+__________________________________________________
+
+The commands below must be entered from within `psql`.
 
 #### Creating a group
 `CREATE ROLE mygroup INHERIT;`
@@ -33,13 +53,17 @@ Users, Groups, and Privileges
 `GRANT mygroup TO myusername;`
 
 #### Change user password
-`\password myusername`
+`\password myusername;`
 
 #### Another way of creating a user
 `CREATE USER myusername WITH PASSWORD 'mypassword';`
 
 #### Granting privileges to the new user
 `GRANT ALL ON DATABASE mydatabase TO myusername;`
+
+
+#### Display a list of roles from within psql.
+`\du`
 
 
 Databases
@@ -68,7 +92,7 @@ Databases
 Backup and Restore
 --------------------------------------------------
 
-#### Options
+#### Options for `pg_dump`
 *   **-h, --host=HOSTNAME**      database server host or socket directory
 *   **-p, --port=PORT**          database server port number
 *   **-U, --username=NAME**      connect as specified database user
@@ -76,7 +100,6 @@ Backup and Restore
 *   **-b, --blobs**              include large objects in dump
 *   **-v, --verbose**            verbose mode
 *   **-f, --file=FILENAME**      output file or directory name
-
 
 #### Create a plain text backup
 `pg_dump -h localhost -p 5432 -U myusername -F p -b -v -f mydatabase.sql mydatabase`
