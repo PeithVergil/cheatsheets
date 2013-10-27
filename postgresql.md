@@ -46,10 +46,10 @@ Databases
 --------------------------------------------------
 
 #### Creating a database
-`sudo -u postgres psql createdb [mydatabase]`
+`sudo -u postgres createdb [mydatabase]`
 
 #### Deleting a database
-`sudo -u postgres psql dropdb [mydatabase]`
+`sudo -u postgres dropdb [mydatabase]`
 
 #### Selecting database
 `sudo -u postgres psql [mydatabase]`
