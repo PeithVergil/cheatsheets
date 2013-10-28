@@ -7,8 +7,10 @@ Installation
 `sudo apt-get install postgresql postgresql-contrib`
 
 
-Psql Client
+Clients
 --------------------------------------------------
+
+### psql
 
 ##### Options for `psql`
 *   **-U, --username=USERNAME**
@@ -16,11 +18,18 @@ Psql Client
 *   **-p, --port=PORT**
 *   **-W, --password**
 
-#### Running psql
+##### Running psql
 `sudo -u postgres psql`
 
-#### Quiting psql
+##### Quiting psql
 `\q`
+
+
+### pgadmin
+
+##### Installation
+`sudo apt-get install pgadmin3`
+
 
 
 Users, Groups, and Privileges
@@ -41,6 +50,9 @@ Users, Groups, and Privileges
 
 #### Creating a super user using the `createuser` command line utility
 `sudo -u postgres createuser -P -s -e myusername`
+
+#### Deleting a user using the `dropuser` command line utility
+`sudo -u postgres dropuser myusername`
 
 __________________________________________________
 
