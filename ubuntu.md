@@ -1,57 +1,68 @@
 Ubuntu
 ======
 
-## Get system info
+System Info
+--------------------------------------------------
+
 `uname -a`
 
-## View users
+
+Users and Groups
+--------------------------------------------------
+
+#### View users
 `cat /etc/passwd`
 
-## Create user
-`sudo adduser _username_`
+#### Create user
+`sudo adduser username`
 
-## Delete user
-`sudo deluser _username_`
+#### Delete user
+`sudo deluser username`
 
-## Set user password
-`passwd _username_`
+#### Set user password
+`passwd username`
 
-## Lock a user account
-`sudo passwd -l _username_`
+#### Lock a user account
+`sudo passwd -l username`
 
-## Unlock a user account
-`sudo passwd -u _username_`
+#### Unlock a user account
+`sudo passwd -u username`
 
-## Add a personalized group
-`sudo addgroup _groupname_`
+#### Add a personalized group
+`sudo addgroup groupname`
 
-## Delete a personalized group
-`sudo delgroup _groupname_`
+#### Delete a personalized group
+`sudo delgroup groupname`
 
-## Add user to a group
-`sudo adduser username _groupname_`
+#### Add user to a group
+`sudo adduser username groupname`
 
-## Remove user from a group
-`sudo deluser _username_ _groupname_`
+#### Remove user from a group
+`sudo deluser username groupname`
 
-## View user account status
-`sudo chage -l _username_`
+#### View user account status
+`sudo chage -l username`
 
-## Change user account status
-sudo chage _username_
+#### Change user account status
+`sudo chage username`
 
-## Change owner of file or folder
-sudo chown -R root:root /home/username/
+#### Change owner of file or folder
+`sudo chown -R root:root /home/username/`
 
-####################################
-# Removing Apps
-####################################
 
-## Remove package
-sudo apt-get remove _packagename_
+Packages
+--------------------------------------------------
 
-## Remove package and all configuration files
-sudo apt-get --purge remove _packagename_
+#### Removing a package
+`sudo apt-get remove packagename`
+
+#### Removing a package and all its configuration files
+`sudo apt-get --purge remove packagename`
+
+#### Listing all installed packages
+    dpkg --list
+    dpkg --list | less
+    dpkg --list | grep -i keyword
 
 ####################################
 # Processes
@@ -84,24 +95,24 @@ apt-get install htop
 # Running htop
 htop
 
-####################################
-# Grep
-####################################
 
-# Search _file_ for _keyword_
-grep _keyword_ _file_
+Grep
+--------------------------------------------------
 
-# Case insensitive searching
-grep -i _keyword_ _file_
+#### Search _file_ for _keyword_
+`grep keyword file`
 
-# Search recursively
-grep -r _keyword_ _folder_
+#### Case insensitive searching
+`grep -i keyword file`
 
-# Match whole word
-grep -w _keyword_ _file_
+#### Search recursively
+`grep -r keyword folder`
 
-# List just the filenames
-grep -l _keyword_ *.txt
+#### Match whole word
+`grep -w keyword file`
+
+#### List just the filenames
+`grep -l keyword *.txt`
 
 ####################################
 # Adding repositories
