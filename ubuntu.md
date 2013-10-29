@@ -183,6 +183,9 @@ SSH Keys
 #### Generating a new SSH Key
 `ssh-keygen -t rsa -C "myemail@mydomain.com"`
 
+#### Add the new SSH key to the server's authorized_keys file
+`ssh-copy-id myusername@myserver`
+
 
 Restarting the system
 --------------------------------------------------
