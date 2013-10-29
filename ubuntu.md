@@ -64,36 +64,35 @@ Packages
     dpkg --list | less
     dpkg --list | grep -i keyword
 
-####################################
-# Processes
-####################################
 
-############################
-# ps
+Processes
+--------------------------------------------------
 
-# See every process on the system
-ps -A
+### ps
 
-# See process run by user
-ps -u _username_
+#### See every process on the system
+`ps -A`
 
-############################
-# top
+#### See process run by user
+`ps -u username`
 
-# Real-time view of a running system
-top
 
-# Save Process Snapshot to a file
-top -b -n1 > ~/process.log
+### top
 
-############################
-# htop
+#### Real-time view of a running system
+`top`
 
-# Installing htop
-apt-get install htop
+#### Save Process Snapshot to a file
+`top -b -n1 > ~/process.log`
 
-# Running htop
-htop
+
+### htop
+
+#### Installing htop
+`apt-get install htop`
+
+#### Running htop
+`htop`
 
 
 Grep
@@ -114,27 +113,28 @@ Grep
 #### List just the filenames
 `grep -l keyword *.txt`
 
-####################################
-# Adding repositories
-####################################
 
-sudo add-apt-repository ppa:rwky/redis
+Repositories
+--------------------------------------------------
 
-############################
-# If add-apt-repository: command not found
+#### Adding repositories
+`sudo add-apt-repository ppa:rwky/redis`
 
-## Install apt-file
-sudo apt-get install apt-file
+If you get an error saying "add-apt-repository: command not found":
 
-## Update apt-file index
-sudo apt-file update
+#### Install apt-file
+`sudo apt-get install apt-file`
 
-## Search for the add-apt-repository package
-sudo apt-file search add-apt-repository package
+#### Update apt-file index
+`sudo apt-file update`
 
-## Install the software-properties-common package
-## When completed, retry installing the PPA package
-sudo apt-get install software-properties-common
+#### Search for the add-apt-repository package
+`sudo apt-file search add-apt-repository package`
+
+Install the **software-properties-common** package. When completed, retry installing the PPA package.
+
+`sudo apt-get install software-properties-common`
+
 
 Installing the LAMP stack
 --------------------------------------------------
@@ -175,3 +175,15 @@ Installing the LAMP stack
         Include /etc/phppgadmin/apache.conf
 5.  Restart the Apache server
         sudo service apache2 restart
+
+
+SSH Keys
+--------------------------------------------------
+
+#### Generating a new SSH Key
+`ssh-keygen -t rsa -C "myemail@mydomain.com"`
+
+
+Restarting the system
+--------------------------------------------------
+`sudo shutdown -h now`
