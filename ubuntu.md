@@ -184,10 +184,10 @@ SSH
 `ssh-keygen -t rsa -C "myemail@mydomain.com"`
 
 #### Add the new SSH key to the server's authorized_keys file
-`ssh-copy-id myusername@myserver`
+`ssh-copy-id myusername@192.168.111.222`
 
 #### Remove host key
-`ssh-keygen -f "/home/myusername/.ssh/known_hosts" -R 192.168.111.222`
+`ssh-keygen -f "/home/$USER/.ssh/known_hosts" -R 192.168.111.222`
 
 
 Restarting the system
