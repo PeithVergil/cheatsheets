@@ -177,7 +177,7 @@ Installing the LAMP stack
         sudo service apache2 restart
 
 
-SSH Keys
+SSH
 --------------------------------------------------
 
 #### Generating a new SSH Key
@@ -185,6 +185,9 @@ SSH Keys
 
 #### Add the new SSH key to the server's authorized_keys file
 `ssh-copy-id myusername@myserver`
+
+#### Remove host key
+`ssh-keygen -f "/home/myusername/.ssh/known_hosts" -R 192.168.111.222`
 
 
 Restarting the system
