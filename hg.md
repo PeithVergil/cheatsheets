@@ -24,30 +24,30 @@ Generating an SSH key
 `ssh-keygen -t rsa -C "myemail@example.com"`
 
 
-####################################
-### Creating a repo
-hg init myproject
-hg init
+
+#### Creating a repo
+    hg init myproject
+    hg init
 
 
-####################################
-### Getting the status
-hg status
-hg st
 
-####################################
-### Adding files
-hg add myfile0, myfile1, myfile2
-hg add
+#### Getting the status
+    hg status
+    hg st
 
-####################################
-### Commiting changes
-hg commit -m "My message here"
-hg commit
-hg ci
 
-####################################
-### Showing commits
+#### Adding files
+    hg add myfile0, myfile1, myfile2
+    hg add
+
+
+#### Commiting changes
+    hg commit -m "My message here"
+    hg commit
+    hg ci
+
+
+#### Showing commits
 
 # Show revision (-r) #3 with patches/diffs (-p)
 hg log -p -r 3
@@ -58,8 +58,8 @@ hg log -v -r 3
 # Show all revisions
 hg log
 
-####################################
-### Undoing changes that have not been commited
+
+#### Undoing changes that have not been commited
 
 # Undo changes to one file
 hg revert myfile
@@ -67,12 +67,12 @@ hg revert myfile
 # Undo changes to all
 hg revert --all
 
-####################################
-### Undoing the last commit
+
+#### Undoing the last commit
 hg rollback
 
-####################################
-### Undoing a specific commit
+
+#### Undoing a specific commit
 hg backout -r 3
 
 # Jump to a commit
@@ -105,8 +105,8 @@ hg cat a.txt
 # Start server
 hg serve
 
-####################################
-### Tags
+
+#### Tags
 
 # Adding a tag
 hg tag v1.0
