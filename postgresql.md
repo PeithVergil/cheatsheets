@@ -31,7 +31,6 @@ Clients
 `sudo apt-get install pgadmin3`
 
 
-
 Users, Groups, and Privileges
 --------------------------------------------------
 
@@ -124,3 +123,15 @@ Backup and Restore
 
 #### Restore a plain text backup to a specific database
 `psql -U postgres -d mydatabase -f mydatabase.sql`
+
+
+Host-based Authentication
+--------------------------------------------------
+
+    # Allow any user on the local system to connect to any database with
+    # any database user name.
+    # TYPE  DATABASE        USER            ADDRESS                 METHOD
+    host    all             all             127.0.0.1/32            trust
+
+    # The same as above, but using a host name.
+    host    all             all             localhost               trust
