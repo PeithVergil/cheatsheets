@@ -22,6 +22,9 @@ Users and Groups
 #### Set user password
 `passwd username`
 
+#### Add user to the "sudo" group
+`sudo adduser username sudo`
+
 #### Lock a user account
 `sudo passwd -l username`
 
