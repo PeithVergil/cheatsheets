@@ -184,7 +184,7 @@ SSH
 --------------------------------------------------
 
 #### Generating a new SSH Key
-`ssh-keygen -t rsa -C "myemail@mydomain.com"`
+`ssh-keygen -t rsa -b 2048`
 
 #### Add the new SSH key to the server's authorized_keys file
 `ssh-copy-id myusername@192.168.111.222`
