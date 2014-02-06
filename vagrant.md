@@ -39,6 +39,9 @@ NFS Synced Folders
 ### Install on guest machine
 `sudo apt-get install nfs-common portmap`
 
+### Run the NFS daemon
+`sudo /etc/init.d/nfs-kernel-server start`
+
 ### Setup Vagrant configuration file
     Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       # NFS synced folders
