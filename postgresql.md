@@ -100,6 +100,13 @@ Databases
 `sudo -u postgres psql mydatabase < mydatabasedump`
 
 
+Tables
+--------------------------------------------------
+
+#### Show table details
+`[mydatabase]=# \d+ [tablename]`
+
+
 Backup and Restore
 --------------------------------------------------
 
