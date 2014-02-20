@@ -30,6 +30,19 @@ Vagrant
 `vagrant box remove precise32 virtualbox`
 
 
+Managing plugins
+----------------------------------------
+
+### Installing a plugin
+`vagrant plugin install vagrant-vbguest`
+
+### Uninstalling a plugin
+`vagrant plugin uninstall vagrant-vbguest`
+
+### List all installed plugins
+`vagrant plugin list`
+
+
 NFS Synced Folders
 ----------------------------------------
 
