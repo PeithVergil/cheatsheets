@@ -91,6 +91,11 @@ MySQL
 Backup and Restore
 --------------------------------------------------
 
+### Options
+*   **–add-drop-table**
+*   **–add-locks**
+*   **–disable-keys**
+
 ### Backup a single database
 `mysqldump -u root -p[password] [database] > [database].sql`
 
