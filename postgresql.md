@@ -45,63 +45,58 @@ Users, Groups, and Privileges
 *   **-e, --echo**
 
 #### Creating a user using the `createuser` command line utility
-`sudo -u postgres createuser -D -R -P -S -e myusername`
+`sudo -u postgres createuser -D -R -P -S -e [myusername]`
 
 #### Creating a super user using the `createuser` command line utility
-`sudo -u postgres createuser -P -s -e myusername`
+`sudo -u postgres createuser -P -s -e [myusername]`
 
 #### Deleting a user using the `dropuser` command line utility
-`sudo -u postgres dropuser myusername`
-
-__________________________________________________
-
-The commands below must be entered from within `psql`.
+`sudo -u postgres dropuser [myusername]`
 
 #### Creating a group
-`CREATE ROLE mygroup INHERIT;`
+`[mydatabase]=# CREATE ROLE [mygroup] INHERIT;`
 
 #### Assigning a user to a group
-`GRANT mygroup TO myusername;`
+`[mydatabase]=# GRANT [mygroup] TO [myusername];`
 
 #### Change user password
-`\password myusername;`
+`[mydatabase]=# \password [myusername];`
 
 #### Another way of creating a user
-`CREATE USER myusername WITH PASSWORD 'mypassword';`
+`[mydatabase]=# CREATE USER [myusername] WITH PASSWORD '[mypassword]';`
 
 #### Granting privileges to the new user
-`GRANT ALL ON DATABASE mydatabase TO myusername;`
+`[mydatabase]=# GRANT ALL ON DATABASE mydatabase TO [myusername];`
 
-
-#### Display a list of roles from within psql.
-`\du`
+#### Display a list of roles
+`[mydatabase]=# \du`
 
 
 Databases
 --------------------------------------------------
 
 #### Creating a database
-`sudo -u postgres createdb mydatabase`
+`sudo -u postgres createdb [mydatabase]`
 
 #### Deleting a database
-`sudo -u postgres dropdb mydatabase`
+`sudo -u postgres dropdb [mydatabase]`
 
 #### Selecting database
-`sudo -u postgres psql mydatabase`
+`sudo -u postgres psql [mydatabase]`
 
 #### Listing databases
 `[mydatabase]=# \l`
 
-#### Listing tables
-    [mydatabase]=# \d+
-    [mydatabase]=# \d
-
 #### Importing an SQL dump
-`sudo -u postgres psql mydatabase < mydatabasedump`
+`sudo -u postgres psql [mydatabase] < mydatabasedump`
 
 
 Tables
 --------------------------------------------------
+
+#### Listing tables
+    [mydatabase]=# \d+
+    [mydatabase]=# \d
 
 #### Show table details
 `[mydatabase]=# \d+ [tablename]`
@@ -120,16 +115,16 @@ Backup and Restore
 *   **-f, --file=FILENAME**      output file or directory name
 
 #### Create a plain text backup
-`pg_dump -h localhost -p 5432 -U myusername -F p -b -v -f mydatabase.sql mydatabase`
+`pg_dump -h localhost -p 5432 -U [myusername] -F p -b -v -f [mydatabase].sql [mydatabase]`
 
 #### Create a plain text backup of a set of tables
-`pg_dump -h localhost -p 5432 -U myusername -F p -b -v -t mytable1 -t mytable2 -t mytable3 -f mydatabase.sql mydatabase`
+`pg_dump -h localhost -p 5432 -U [myusername] -F p -b -v -t [mytable1] -t [mytable2] -t [mytable3] -f [mydatabase].sql [mydatabase]`
 
 #### Restore a plain text backup
-`psql -U postgres -f mydatabase.sql`
+`psql -U postgres -f [mydatabase].sql`
 
 #### Restore a plain text backup to a specific database
-`psql -U postgres -d mydatabase -f mydatabase.sql`
+`psql -U postgres -d [mydatabase] -f [mydatabase].sql`
 
 
 Host-based Authentication
