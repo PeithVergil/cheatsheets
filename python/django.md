@@ -1,3 +1,15 @@
+Django
+======
+
+
+Management commands
+--------------------------------------------------
+
+### Loading fixtures
+`python manage.py loaddata [mydata].json`
+
+
+
 ######################################
 # Delete the file when model is deleted from the database.
 #
