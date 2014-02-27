@@ -18,3 +18,9 @@ Django South
 
 ## Converting an app
 `python manage.py convert_to_south myapp`
+
+## Listing migrations
+`python manage.py migrate --list [myapp]`
+
+## Data migrations
+`python manage.py datamigration [myapp] [my_data_migration]`

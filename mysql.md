@@ -80,6 +80,9 @@ MySQL
 `SELECT * FROM [table]\G`
 
 
+Alter Tables
+--------------------------------------------------
+
 ## Renaming a table
 `RENAME TABLE [old_name] TO [new_name];`
 
@@ -87,14 +90,12 @@ MySQL
 ## Modifing table definition
 `ALTER TABLE [table] MODIFY COLUMN [column] [column definition];`
 
+## Droping foreign key constraints
+`ALTER TABLE [mytable] DROP FOREIGN KEY [foreign key constraint];`
+
 
 Backup and Restore
 --------------------------------------------------
-
-### Options
-*   **–add-drop-table**
-*   **–add-locks**
-*   **–disable-keys**
 
 ### Backup a single database
 `mysqldump -u root -p[password] [database] > [database].sql`
