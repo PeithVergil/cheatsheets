@@ -53,6 +53,9 @@ Users, Groups, and Privileges
 #### Deleting a user using the `dropuser` command line utility
 `sudo -u postgres dropuser [myusername]`
 
+#### Altering a user's privilege
+`ALTER USER [myusername] CREATEDB`
+
 #### Creating a group
 `[mydatabase]=# CREATE ROLE [mygroup] INHERIT;`
 
