@@ -47,7 +47,7 @@ Users, Groups, and Privileges
 #### Creating a user using the `createuser` command line utility
 `sudo -u postgres createuser -D -R -P -S -e [myusername]`
 
-#### Creating a super user using the `createuser` command line utility
+#### Creating a superuser using the `createuser` command line utility
 `sudo -u postgres createuser -P -s -e [myusername]`
 
 #### Deleting a user using the `dropuser` command line utility
@@ -102,7 +102,10 @@ Tables
     [mydatabase]=# \d
 
 #### Show table details
-`[mydatabase]=# \d+ [tablename]`
+`[mydatabase]=# \d+ [mytable]`
+
+#### Altering a table
+`ALTER TABLE [mytable] OWNER TO [myusername];`
 
 
 Backup and Restore
