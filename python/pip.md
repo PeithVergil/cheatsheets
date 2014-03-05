@@ -37,6 +37,11 @@ Installing a package from a tarball over HTTP
 `pip install http://dist.repoze.org/PIL-1.1.6.tar.gz`
 
 
+Installing a package from a repository
+--------------------------------------------------
+`pip install git+https://github.com/mariocesar/sorl-thumbnail`
+
+
 Installing from a requirements file
 --------------------------------------------------
 `pip install -r requirements.txt`
