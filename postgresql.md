@@ -87,8 +87,12 @@ Databases
 #### Selecting database
 `sudo -u postgres psql [mydatabase]`
 
+#### Listing databases via psql
+`sudo -u postgres psql -l`
+
 #### Listing databases
 `[mydatabase]=# \l`
+
 
 #### Importing an SQL dump
 `sudo -u postgres psql [mydatabase] < mydatabasedump`
