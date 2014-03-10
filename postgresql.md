@@ -98,14 +98,20 @@ Tables
 --------------------------------------------------
 
 #### Listing tables
-    [mydatabase]=# \d+
-    [mydatabase]=# \d
+`[mydatabase]=# \dt`
 
 #### Show table details
 `[mydatabase]=# \d+ [mytable]`
 
 #### Altering a table
 `ALTER TABLE [mytable] OWNER TO [myusername];`
+
+
+Views
+--------------------------------------------------
+
+#### Listing views
+`[mydatabase]=# \dv`
 
 
 Backup and Restore
