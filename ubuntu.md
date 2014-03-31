@@ -101,6 +101,10 @@ Processes
 Grep
 --------------------------------------------------
 
+#### Options
+*   **-n, --line-number**
+*   **-v, --invert-match**
+
 #### Search _file_ for _keyword_
 `grep keyword file`
 
@@ -115,6 +119,18 @@ Grep
 
 #### List just the filenames
 `grep -l keyword *.txt`
+
+#### List just the filenames
+`grep -l keyword *.txt`
+
+#### Match words that starts with ...
+`grep "^keyword" /path/to/file`
+
+#### Match words that ends with ...
+`grep "keyword$" /path/to/file`
+
+#### Match whole word with regex
+`grep "^keyword$" /path/to/file`
 
 
 Repositories
