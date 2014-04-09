@@ -8,6 +8,9 @@ Installation
 #### Install phonegap
 `sudo npm install -g phonegap`
 
+#### Update phonegap
+`sudo npm update -g phonegap`
+
 #### Download Android SDK
 `http://developer.android.com/sdk/index.html`
 
@@ -29,6 +32,15 @@ Building an app
     phonegap build android
 
 
+Updating an app
+--------------------------------------------------
+`phonegap platform update android`
+
+
 Installing an app to emulator or device
 --------------------------------------------------
 `phonegap install android`
+
+Running an app on the emulator or device
+--------------------------------------------------
+`phonegap run android`

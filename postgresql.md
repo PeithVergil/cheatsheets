@@ -108,7 +108,12 @@ Tables
 `[mydatabase]=# \d+ [mytable]`
 
 #### Altering a table
+
+##### Change owner
 `ALTER TABLE [mytable] OWNER TO [myusername];`
+
+##### Dropping constraint
+`ALTER TABLE [mytable] DROP CONSTRAINT "[constraint_name]";`
 
 
 Views
