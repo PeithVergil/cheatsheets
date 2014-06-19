@@ -22,5 +22,8 @@ Django South
 ## Listing migrations
 `python manage.py migrate --list [myapp]`
 
+## Initial migrations
+`python manage.py schemamigration [myapp] --initial`
+
 ## Data migrations
 `python manage.py datamigration [myapp] [my_data_migration]`

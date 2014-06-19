@@ -10,3 +10,9 @@ Installation
 
 #### Update Cordova
 `sudo npm update -g cordova`
+
+
+
+
+#### Running the app
+`cordova run android`
