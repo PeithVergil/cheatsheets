@@ -15,7 +15,11 @@ HTTP Methods
 
 ### GET
 
-`http -v [example.org]`
+`http -v GET [example.org]`
+
+### GET with query strings
+
+`http -v GET [example.org] fname==hello lname==world`
 
 ### PUT
 
