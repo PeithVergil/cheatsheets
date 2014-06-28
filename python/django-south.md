@@ -27,3 +27,6 @@ Django South
 
 ## Data migrations
 `python manage.py datamigration [myapp] [my_data_migration]`
+
+## Apply data migrations as 'fake'
+`python manage.py migrate [myapp] --fake`

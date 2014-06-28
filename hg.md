@@ -30,7 +30,6 @@ Generating an SSH key
     hg init
 
 
-
 #### Getting the status
     hg status
     hg st
@@ -116,3 +115,38 @@ hg tags
 
 # Removing a tag
 hg tag --remove v1.0
+
+
+Bookmarks
+--------------------------------------------------
+
+#### List all bookmarks
+`hg bookmarks`
+
+
+#### Creating a bookmark
+`hg bookmark [mybookmark]`
+
+
+#### Renaming a bookmark
+`hg bookmark --rename [oldbookmark] [newbookmark]`
+
+
+#### Deleting a bookmark
+`hg bookmark --delete [mybookmark]`
+
+
+#### Check for incoming bookmarks
+`hg incoming -B`
+
+
+#### Check for outgoing bookmarks
+`hg outgoing -B`
+
+
+#### Pushing a bookmarked changeset excluding the bookmark information
+`hg push -r [mybookmark]`
+
+
+#### Pushing a bookmarked changeset including the bookmark information
+`hg push -B [mybookmark]`
