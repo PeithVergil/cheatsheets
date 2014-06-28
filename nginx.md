@@ -23,9 +23,7 @@ Nginx Cheatsheet
 
         `sudo openssl genrsa -des3 -out server.key 2048`
 
-    *   Create the certificate signing request. The most important line is **Common Name**.
-        Enter your official domain name here. Leave the challenge password and optional company name blank.
-        You can submit the CSR file to a Certificate Authority for signing.
+    *   Create the certificate signing request. The most important line is **Common Name**. Enter your official domain name here. Leave the challenge password and optional company name blank. You can submit the CSR file to a Certificate Authority for signing.
 
         `sudo openssl req -new -key server.key -out server.csr`
 
@@ -39,8 +37,7 @@ Nginx Cheatsheet
 
 4.  Setting up Nginx
     
-    *   Combine all chain certificates with your server certificate. Make sure that your server
-        certificate comes first.
+    *   Combine all chain certificates with your server certificate. Make sure that your server certificate comes first.
 
         `cat server.crt GandiStandardSSLCA.pem > server.crt`
 
@@ -48,8 +45,7 @@ Nginx Cheatsheet
 
         `sudo cp server.key server.key.orig`
 
-    *   Remove the passphrase from the server key. This will allow Nginx to easily use the server key
-        without having to provide the passphrase.
+    *   Remove the passphrase from the server key. This will allow Nginx to easily use the server key without having to provide the passphrase.
 
         `sudo openssl rsa -in server.key.orig -out server.key`
 
