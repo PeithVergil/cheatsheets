@@ -10,6 +10,9 @@ Nginx Cheatsheet
 ### Stopping the server
 `sudo service nginx stop`
 
+### Test the config file
+`sudo /usr/bin/nginx -t -c /etc/nginx/nginx.conf`
+
 ### SSL Certificate
 
 1.  Create a directory for the certificate
@@ -21,7 +24,7 @@ Nginx Cheatsheet
 
     *   Create a server key with a passphrase.
 
-        `sudo openssl genrsa -des3 -out server.key 2048`
+        `sudo openssl genrsa -des3 -out server.key 4096`
 
     *   Create the certificate signing request. The most important line is **Common Name**. Enter your official domain name here. Leave the challenge password and optional company name blank. You can submit the CSR file to a Certificate Authority for signing.
 
@@ -39,7 +42,7 @@ Nginx Cheatsheet
     
     *   Combine all chain certificates with your server certificate. Make sure that your server certificate comes first.
 
-        `cat server.crt GandiStandardSSLCA.pem > server.crt`
+            cat certificate.crt GandiStandardSSLCA.pem > server.crt
 
     *   Create a copy of the server key. This will serve as a backup.
 
