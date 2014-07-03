@@ -1,0 +1,68 @@
+##############################
+# Navigating through text
+b # Jump to prev word
+w # Jump to next word
+
+gg # Jump to top of file
+G  # Jump to end of file
+
+CTRL+B # Page up
+CTRL+F # Page down
+
+##############################
+# Inserting text
+I # Insert at start of the line
+A # Insert at end of the line
+O # Insert at prev line
+o # Insert at next line
+
+##############################
+# Copy/cut and paste
+
+v      # Text selection
+V      # Line selection
+CTRL+v # Column selection
+
+y # Copy selected text
+d # Cut selected text
+
+p # paste after the cursor
+P # paste before the cursor
+
+##############################
+# Joining lines
+J
+##############################
+# Yanking/copy line
+yy
+##############################
+# Delete/cut line
+dd
+
+##############################
+# Undo
+u
+
+##############################
+# Redo
+CTRL+r
+
+##############################
+# Find
+?[keyword to find]
+
+n # Find next occurence going forward
+N # Find next occurence going backwards
+
+##############################
+# Find and replace
+
+# Case sensitive
+:%s/[regex search pattern]/[regex replace pattern]/gc
+
+# Case insensitive
+:%s/[regex search pattern]/[regex replace pattern]/gci
+
+##############################
+# Switching windows
+CTRL+ww
