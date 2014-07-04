@@ -199,14 +199,29 @@ Installing the LAMP stack
 SSH
 --------------------------------------------------
 
-#### Generating a new SSH Key
-`ssh-keygen -t rsa -b 2048`
+#### Logging in to a remote server
+`ssh myusername@192.168.111.222`
 
-#### Add the new SSH key to the server's authorized_keys file
+#### Logging in to a remote server with a different private key
+`ssh myusername@192.168.111.222 -i ~/myprivatekey`
+
+#### Generating a new SSH Key
+`ssh-keygen -t rsa -b 4096`
+
+#### Add the new SSH key to the remote server's authorized_keys file
 `ssh-copy-id myusername@192.168.111.222`
 
 #### Remove host key
 `ssh-keygen -f "/home/$USER/.ssh/known_hosts" -R 192.168.111.222`
+
+#### SSH important configurations
+
+    # Disable password authentication
+    PasswordAuthentication no
+
+    # Enable public key authentication
+    PubkeyAuthentication yes
+    RSAAuthentication yes
 
 
 Restarting the system

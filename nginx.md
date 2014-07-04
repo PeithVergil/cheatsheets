@@ -10,6 +10,16 @@ Nginx Cheatsheet
 ### Stopping the server
 `sudo service nginx stop`
 
+### Editing the nginx config file
+`sudo vim /etc/nginx/nginx.conf`
+
+### Some settings worth noting
+    # Reduce the amount of info returned by Nginx
+    server_tokens off;
+
+    # Limit the file upload size
+    client_max_body_size 4096K;
+
 ### Test the config file
 `sudo /usr/bin/nginx -t -c /etc/nginx/nginx.conf`
 
