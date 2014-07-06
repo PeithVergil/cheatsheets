@@ -13,3 +13,13 @@ Installation
 
 #### Install Pygame
 `pip install pygame`
+
+
+Installing Pygame in a virtualenv
+--------------------------------------------------
+
+#### Install dependencies
+`sudo apt-get build-dep python-pygame`
+
+#### Install Pygame
+`pip install pygame`
