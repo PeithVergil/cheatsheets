@@ -1,22 +1,33 @@
-Laravel 4
-=========
+Laravel
+=======
 
 
-Composer
+Installation
 --------------------------------------------------
 
-##### Installing composer
-1.  Download the composer executable
-        curl -sS https://getcomposer.org/installer | php
-2.  Move the executable where it can be accessed globally
-        sudo mv composer.phar /usr/local/bin/composer
+#### Download the Laravel PHAR archive
+`http -d http://laravel.com/laravel.phar`
+
+**NOTE**: The `http` tool requires HTTPie
+
+#### Rename the PHAR archive
+`mv laravel.phar laravel`
+
+#### Move to bin directory
+`sudo mv laravel /usr/local/bin`
+
+#### Set permissions
+`sudo chmod 755 /usr/local/bin/laravel`
 
 
 Projects
 --------------------------------------------------
 
-##### Creating a project
-`composer create-project laravel/laravel sampleproject --prefer-dist`
+#### Creating a project
+`laravel new [myproject]`
+
+#### Allow write permission to the `app/storage` directory
+`chmod -R 755 [myproject]/app/storage`
 
 
 Controllers
