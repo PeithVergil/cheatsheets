@@ -10,14 +10,21 @@ Installation
 
 **NOTE**: The `http` tool requires HTTPie
 
-#### Rename the PHAR archive
-`mv laravel.phar laravel`
-
-#### Move to bin directory
-`sudo mv laravel /usr/local/bin`
+#### Move and rename to bin directory
+`sudo mv laravel.phar /usr/local/bin/laravel`
 
 #### Set permissions
 `sudo chmod 755 /usr/local/bin/laravel`
+
+
+Composer Installation
+--------------------------------------------------
+
+#### Download composer
+`php -r "readfile('https://getcomposer.org/installer');" | php`
+
+#### Move and rename to bin directory
+`sudo mv composer.phar /usr/local/bin/composer`
 
 
 Projects
