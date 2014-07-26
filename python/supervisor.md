@@ -7,18 +7,13 @@ Installation
 `sudo apt-get install supervisor`
 
 
-Configuration (optional)
+Creating a Program
 --------------------------------------------------
 
-#### View default configuration
-`echo_supervisord_conf`
+#### Create a configuration file
+`sudo vim /etc/supervisor/conf.d/djangoapp.conf`
 
-#### Save default configuration
-`echo_supervisord_conf > /etc/supervisord.conf`
-
-
-Sample Program
---------------------------------------------------
+#### Sample program configuration
     [program:djangoapp]
     ; The program to execute
     command=/home/pvergil/Apps/pyenv/py1/bin/gunicorn --workers=2 --bind=0.0.0.0:8000 pev.wsgi:application
@@ -36,21 +31,16 @@ Sample Program
     stdout_logfile=/path/to/log.out.log
     stderr_logfile=/path/to/log.err.log
 
-##########################
-### Running supervisord
-supervisord
 
-# Run supervisord in the foreground
-supervisord -n
-
-# The path to a supervisord configuration file
-supervisord -c /path/to/supervisord.conf
+Restarting supervisor
+--------------------------------------------------
+`sudo service supervisor restart`
 
 
-supervisorctl
+Using supervisorctl
 --------------------------------------------------
 
-#### Run supervisorctl
+#### Running supervisorctl
 `supervisorctl`
 
 #### List processes
@@ -66,39 +56,5 @@ supervisorctl
 `supervisorctl> exit`
 
 
-##########################
-### Shutting down supervisord
-supervisorctl> shutdown
-
-####################################
-# INIT.D
-####################################
-# Supervisord auto-start
-#
-# description: Auto-starts supervisord
-# processname: supervisord
-# pidfile: /var/run/supervisord.pid
-
-SUPERVISORD=/usr/bin/supervisord
-SUPERVISORCTL=/usr/bin/supervisorctl
-
-case $1 in
-start)
-        echo -n "Starting supervisord: "
-        $SUPERVISORD
-        echo
-        ;;
-stop)
-        echo -n "Stopping supervisord: "
-        $SUPERVISORCTL shutdown
-        echo
-        ;;
-restart)
-        echo -n "Stopping supervisord: "
-        $SUPERVISORCTL shutdown
-        echo
-        echo -n "Starting supervisord: "
-        $SUPERVISORD
-        echo
-        ;;
-esac
+#### Shutting down supervisor
+`supervisorctl> shutdown`
