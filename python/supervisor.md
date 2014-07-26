@@ -40,21 +40,20 @@ Restarting supervisor
 Using supervisorctl
 --------------------------------------------------
 
-#### Running supervisorctl
+#### Running supervisorctl in interactive mode
 `supervisorctl`
 
-#### List processes
-`supervisorctl> status`
-
-#### Stopping a process
-`supervisorctl> stop PROCESS_NAME`
-
-#### Starting a process
-`supervisorctl> start PROCESS_NAME`
-
-#### Exit supervisorctl
+#### Exit supervisorctl interactive mode
 `supervisorctl> exit`
 
+#### List processes
+`supervisorctl status`
+
+#### Stopping a process
+`supervisorctl stop PROCESS_NAME`
+
+#### Starting a process
+`supervisorctl start PROCESS_NAME`
 
 #### Shutting down supervisor
-`supervisorctl> shutdown`
+`supervisorctl shutdown`
