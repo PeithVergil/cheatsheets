@@ -29,6 +29,9 @@ Branches
 #### Creating a tracking branch
 `git branch --track newbranch origin/master`
 
+#### Creating a new remote branch
+`git push [origin] [mybranch]:[mybranch]`
+
 
 ## Edit the last commit message
 `git commit --amend -m "New commit message"`
