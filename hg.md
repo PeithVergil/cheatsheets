@@ -144,9 +144,17 @@ Bookmarks
 `hg outgoing -B`
 
 
-#### Pushing a bookmarked changeset excluding the bookmark information
+#### Pushing a bookmarked changeset
+`hg push -B [mybookmark]`
+
+
+#### Pulling a bookmarked changeset
+`hg pull -B [mybookmark]`
+
+
+#### Pushing a changeset using a bookmark name
 `hg push -r [mybookmark]`
 
 
-#### Pushing a bookmarked changeset including the bookmark information
-`hg push -B [mybookmark]`
+#### Pulling a changeset using a bookmark name
+`hg pull -r [mybookmark]`
