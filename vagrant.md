@@ -5,6 +5,9 @@ Vagrant
     vagrant box add precise32 http://cloud-images.ubuntu.com/vagrant/precise/current/precise-server-cloudimg-i386-vagrant-disk1.box
     vagrant box add quantal32 http://cloud-images.ubuntu.com/vagrant/quantal/current/quantal-server-cloudimg-i386-vagrant-disk1.box
 
+### Adding boxes from VagrantCloud
+`vagrant box add ubuntu/trusty32`
+
 ### Initializing a new VM
 `vagrant init precise32`
 
