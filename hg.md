@@ -158,3 +158,11 @@ Bookmarks
 
 #### Pulling a changeset using a bookmark name
 `hg pull -r [mybookmark]`
+
+
+#### Moving a bookmark forward
+`hg bookmark [mybookmark] -r [123]`
+
+
+#### Moving a bookmark backward
+`hg bookmark [mybookmark] -f -r [100]`
