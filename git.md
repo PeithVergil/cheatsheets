@@ -32,6 +32,12 @@ Branches
 #### Creating a new remote branch
 `git push [origin] [mybranch]:[mybranch]`
 
+#### Renaming a branch
+`git branch -m [oldname] [newname]`
+
+#### Renaming the current branch
+`git branch -m [newname]`
+
 
 ## Edit the last commit message
 `git commit --amend -m "New commit message"`
