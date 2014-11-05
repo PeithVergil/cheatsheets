@@ -155,6 +155,32 @@ Install the **software-properties-common** package. When completed, retry instal
 `sudo apt-get install software-properties-common`
 
 
+File Permissions
+--------------------------------------------------
+
+#### Options
+| Option | Meaning      |
+|:------:|:------------:|
+| **u**  |  owner       |
+| **g**  |  group       |
+| **o**  |  other       |
+| **r**  |  read (4)    |
+| **w**  |  write (2)   |
+| **x**  |  execute (1) |
+
+#### Adding file permissions
+`chmod ugo+rwx filename`
+
+#### Setting file permissions
+`chmod ugo=rwx filename`
+
+#### Removing file permissions
+`chmod ugo-rwx filename`
+
+#### Setting file permissions recursively
+`chmod ugo=rwx -R directoryname`
+
+
 Installing the LAMP stack
 --------------------------------------------------
 
