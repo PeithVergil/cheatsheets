@@ -18,4 +18,14 @@ Show supported sites
 
 Playing a video
 --------------------------------------------------
-`livestreamer "http://www.twitch.tv/destiny"`
+`livestreamer [http://www.twitch.tv/destiny] [high]`
+
+
+Stream qualities/types
+--------------------------------------------------
+* source (best)
+* high
+* medium
+* low
+* mobile (worst)
+* audio
