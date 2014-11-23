@@ -14,4 +14,4 @@ Show supported sites
 
 Downloading a video
 --------------------------------------------------
-`youtube-dl "http://www.youtube.com/watch?v=foobar"`
+`youtube-dl "https://www.youtube.com/watch?v=xzCEdSKMkdU"`
