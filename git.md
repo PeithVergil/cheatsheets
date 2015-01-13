@@ -49,5 +49,8 @@ Branches
 `git branch --set-upstream master origin/master`
 
 
+## Add the URL of the remote branch
+`git remote add [origin] [git://new.url.here]`
+
 ## Update the URL of the remote branch
-`git remote set-url origin git://new.url.here`
+`git remote set-url [origin] [git://new.url.here]`
