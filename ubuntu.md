@@ -146,6 +146,16 @@ File Permissions
 `chmod ugo=rwx -R directoryname`
 
 
+File Sharing
+--------------------------------------------------
+
+#### Install the Samba server
+`sudo apt-get install samba samba-common`
+
+#### Install Samba configuration utility
+`sudo apt-get install python-glade2 system-config-samba`
+
+
 Installing the LAMP stack
 --------------------------------------------------
 
