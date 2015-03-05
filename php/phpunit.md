@@ -1,0 +1,7 @@
+PHPUnit
+=============
+
+
+Installation
+--------------------------------------------------
+`composer global require "phpunit/phpunit=4.5.*"`
