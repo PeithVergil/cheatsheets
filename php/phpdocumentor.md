@@ -1,10 +1,10 @@
-youtube-dl
-==========
+phpDocumentor
+=============
 
 
 Installation
 --------------------------------------------------
-`composer require "phpdocumentor/phpdocumentor:[2.*]"`
+`composer global require "phpdocumentor/phpdocumentor=[2.*]"`
 
 
 Using phpDocumentor
