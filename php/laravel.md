@@ -5,26 +5,17 @@ Laravel
 Installation
 --------------------------------------------------
 
-#### Download the Laravel PHAR archive
-`http -d http://laravel.com/laravel.phar`
-
-**NOTE**: The `http` tool requires HTTPie
-
-#### Move and rename to bin directory
-`sudo mv laravel.phar /usr/local/bin/laravel`
-
-#### Set permissions
-`sudo chmod 755 /usr/local/bin/laravel`
-
-
-Composer Installation
---------------------------------------------------
-
 #### Download composer
 `php -r "readfile('https://getcomposer.org/installer');" | php`
 
-#### Move and rename to bin directory
+#### Move and rename composer
 `sudo mv composer.phar /usr/local/bin/composer`
+
+#### Download the Laravel installer using Composer
+`composer global require "laravel/installer=~1.1"`
+
+#### Add Composer's bin directory to the system path
+`export PATH=~/.composer/vendor/bin:$PATH`
 
 
 Projects
