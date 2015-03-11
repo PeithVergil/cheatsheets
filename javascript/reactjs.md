@@ -9,4 +9,4 @@ Installation
 
 Translate JSX to JS
 --------------------------------------------------
-`jsx --watch [/path/to/src] [/path/to/dest]`
+`jsx --watch [/path/to/src/] [/path/to/dest/]`
