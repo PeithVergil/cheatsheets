@@ -95,3 +95,28 @@ Remove all cached packages in `~/.bower`
 ```bash
 bower cache-clean
 ```
+
+
+Using `component.json`
+--------------------------------------------------
+
+This is a sample component.json file:
+
+```json
+{
+    "name"        : "MyProject",
+    "version"     : "0.1",
+    "dependencies": {
+        "backbone": "latest",
+        "knockout": "3.3.0"
+    }
+}
+```
+
+Run the `component.json` file above using `bower`:
+
+```bash
+bower install
+```
+
+The above command will install all packages under `dependencies`.
