@@ -4,32 +4,48 @@ Supervisor
 
 Installation
 --------------------------------------------------
-`sudo apt-get install supervisor`
+
+Install `supervisor` globaly using Ubuntu's package manager.
+
+```bash
+sudo apt-get install supervisor
+```
 
 
-Creating a Program
+Creating a program
 --------------------------------------------------
 
-#### Create a configuration file
-`sudo vim /etc/supervisor/conf.d/djangoapp.conf`
+Create a configuration file.
 
-#### Sample program configuration
-    [program:djangoapp]
-    ; The program to execute
-    command=/home/pvergil/Apps/pyenv/py1/bin/gunicorn --workers=2 --bind=0.0.0.0:8000 pev.wsgi:application
+```bash
+sudo vim /etc/supervisor/conf.d/myapp.conf
+```
 
-    ; Change to this directory before executing the command above
-    directory=/home/pvergil/Projects/Python/Django/pev
+A sample program configuration:
 
-    ; Start the program when the system boots
-    autostart=true
+```ini
+[program:myapp]
+; The command that will execute the program.
+command=/path/to/gunicorn --workers=3 --bind=127.0.0.1:8000 app.wsgi:application
 
-    ; Always restart the program when it exits
-    autorestart=true
+; Change directory before executing the "command".
+directory=/path/to/project
 
-    ; Define the locations of the log files
-    stdout_logfile=/path/to/log.out.log
-    stderr_logfile=/path/to/log.err.log
+; Start the program when the system boots.
+autostart=true
+
+; Always restart the program when it exits.
+autorestart=true
+
+; Define the locations of the log files.
+stdout_logfile=/path/to/log.out.log
+stderr_logfile=/path/to/log.err.log
+
+; Define custom environment variables that can be accessed inside the app.
+; If a string value contains the percent (%) symbol, it must be escaped
+; with another percent (%) symbol.
+environment=SECRET_KEY="INSERT RANDOM %% STRING HERE %%",CONF="live.conf"
+```
 
 
 Restarting supervisor
