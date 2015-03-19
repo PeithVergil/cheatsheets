@@ -73,3 +73,11 @@ Using supervisorctl
 
 #### Shutting down supervisor
 `supervisorctl shutdown`
+
+Check for changes in the configuration file and
+run all the changes:
+
+```bash
+sudo supervisorctl reread
+sudo supervisorctl update
+```
