@@ -2,12 +2,14 @@ HTTPie
 ===
 
 
-Flags
+Options
 ---
 
-* **-d, --download** Download mode
-* **-f, --form** Form data
-* **-v, --verbose** Verbose mode
+| Short   | Long           | Description          |
+|:-------:|:---------------|----------------------|
+| **-d**  | **--download** | Download mode        |
+| **-v**  | **--verbose**  | Verbose mode         |
+| **-f**  | **--form**     | Form data            |
 
 
 HTTP Methods
