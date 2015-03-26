@@ -29,7 +29,17 @@ HTTP Methods
 
 ### POST
 
-`http -v -f POST [example.org] [hello=world]`
+Sending a JSON data:
+
+```bash
+http POST [example.org] < [example.json]
+```
+
+Sending a form request:
+
+```bash
+http -v -f POST [example.org] [hello=world]
+```
 
 ### DELETE
 
