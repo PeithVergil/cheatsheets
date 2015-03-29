@@ -36,5 +36,5 @@ phpdoc -d [/path/to/source] -t [/path/to/output] -i [/path/to/source/bin,/path/t
 Glob syntax is also recognized:
 
 ```bash
-phpdoc -d [/path/to/source] -t [/path/to/output] -i [bin/*,tests/*,vendor/*]
+phpdoc -d [/path/to/source] -t [/path/to/output] -i "[bin/*,tests/*,vendor/*]"
 ```
