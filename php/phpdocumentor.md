@@ -32,3 +32,9 @@ Multiple files and directories can be ignored by separating the paths with a com
 ```bash
 phpdoc -d [/path/to/source] -t [/path/to/output] -i [/path/to/source/bin,/path/to/source/tests,/path/to/source/vendor]
 ```
+
+Glob syntax is also recognized:
+
+```bash
+phpdoc -d [/path/to/source] -t [/path/to/output] -i [bin/*,tests/*,vendor/*]
+```
