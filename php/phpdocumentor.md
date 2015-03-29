@@ -13,6 +13,22 @@ Using phpDocumentor
 ### Options
 * **-d** Source directory
 * **-t** Output directory
+* **-i** Ignore files
 
-### Generating a documentation
-`phpdoc -d [/path/to/source] -t [/path/to/output]`
+A simple example for generating a documentation:
+
+```bash
+phpdoc -d [/path/to/source] -t [/path/to/output]
+```
+
+Use the `-i` option to ignore files and directories.
+
+```bash
+phpdoc -d [/path/to/source] -t [/path/to/output] -i [/path/to/source/tests]
+```
+
+Multiple files and directories can be ignored by separating the paths with a comma:
+
+```bash
+phpdoc -d [/path/to/source] -t [/path/to/output] -i [/path/to/source/bin,/path/to/source/tests,/path/to/source/vendor]
+```
