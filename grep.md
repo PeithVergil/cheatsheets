@@ -8,6 +8,7 @@ Grep
 *   **-n, --line-number**
 *   **-r, --recursive**
 *   **-v, --invert-match**
+*   **-E, --extended-regexp**
 
 #### Search _file_ for _keyword_
 `grep keyword file`
@@ -35,3 +36,9 @@ Grep
 
 #### Match whole word with regex
 `grep "^keyword$" /path/to/file`
+
+Match one string or the other:
+
+```bash
+grep -E "Keyword|keyword" /path/to/file
+```
