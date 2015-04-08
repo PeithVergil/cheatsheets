@@ -101,8 +101,17 @@ Processes
 Repositories
 --------------------------------------------------
 
-#### Adding repositories
-`sudo add-apt-repository ppa:rwky/redis`
+Adding a repository:
+
+```bash
+sudo add-apt-repository ppa:rwky/redis
+```
+
+Removing a repository:
+
+```bash
+sudo add-apt-repository --remove ppa:rwky/redis
+```
 
 If you get an error saying "add-apt-repository: command not found":
 
