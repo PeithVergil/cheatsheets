@@ -185,6 +185,14 @@ Edit the `/etc/exports` file and add the directory to be exported:
 /path/to/directory2 192.168.254.105(rw,sync,no_subtree_check,no_root_squash)
 ```
 
+Options for `/etc/exports`:
+| Option               | Description           |
+|:--------------------:|:---------------------:|
+| **rw**               | read and write access |
+| **sync**             |                       |
+| **no_root_squash**   |                       |
+| **no_subtree_check** |                       |
+
 Run this command everytime the `/etc/exports` file is updated:
 
 ```bash
@@ -195,6 +203,25 @@ Restart the NFS server:
 
 ```bash
 sudo service nfs-kernel-server restart
+```
+
+Install the NFS client:
+
+```bash
+sudo apt-get install nfs-common
+```
+
+Mount the shared directories to a local directory:
+
+```bash
+sudo mount 192.168.254.105:/path/to/directory1 /path/to/local/directory1
+sudo mount 192.168.254.105:/path/to/directory2 /path/to/local/directory2
+```
+
+Display all mounted NFS directories:
+
+```bash
+mount -t nfs
 ```
 
 
