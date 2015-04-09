@@ -164,6 +164,39 @@ File Sharing
 #### Install Samba configuration utility
 `sudo apt-get install python-glade2 system-config-samba`
 
+#### File sharing using NFS
+
+Check if the NTF server is already installed:
+
+```bash
+dpkg -l | grep nfs-kernel-server
+```
+
+Install the NFS server:
+
+```bash
+sudo apt-get install nfs-kernel-server
+```
+
+Edit the `/etc/exports` file and add the directory to be exported:
+
+```
+/path/to/directory1 *(rw,sync,no_subtree_check,no_root_squash)
+/path/to/directory2 192.168.254.105(rw,sync,no_subtree_check,no_root_squash)
+```
+
+Run this command everytime the `/etc/exports` file is updated:
+
+```bash
+sudo exportfs -a
+```
+
+Restart the NFS server:
+
+```bash
+sudo service nfs-kernel-server restart
+```
+
 
 Installing the LAMP stack
 --------------------------------------------------
