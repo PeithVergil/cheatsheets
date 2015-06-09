@@ -297,3 +297,21 @@ SSH
 Restarting the system
 --------------------------------------------------
 `sudo shutdown -h now`
+
+
+Create a Certificate Signing Request (CSR)
+--------------------------------------------------
+
+Create the directory where the keys will be created:
+
+```bash
+sudo mkdir -p /etc/nginx/ssl
+```
+
+Create the private key and certificate signing request. The `-nodes` option means there will be no passphrase:
+
+```bash
+sudo openssl req -new -newkey rsa:2048 -nodes -out /etc/nginx/ssl/mysite.com.crt -keyout /etc/nginx/ssl/mysite.com.key
+```
+
+When prompted for the **Common Name**, be sure to enter the **fully qualified domain name**. Example: `mysite.com` or `*.mysite.com` for multiple (wildcard) subdomains.

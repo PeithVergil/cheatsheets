@@ -98,16 +98,16 @@ Backup and Restore
 --------------------------------------------------
 
 ### Backup a single database
-`mysqldump -u root -p[password] [database] > [database].sql`
+`mysqldump -h [localhost] -u [root] -p[password] [database] > [database].sql`
 
 ### Backup multiple databases
-`mysqldump -u root -p[password] --databases [database1] [database2] > databases.sql`
+`mysqldump -h [localhost] -u [root] -p[password] --databases [database1] [database2] > databases.sql`
 
 ### Backup all databases
-`mysqldump -u root -p[password] --all-databases > all-databases.sql`
+`mysqldump -h [localhost] -u [root] -p[password] --all-databases > all-databases.sql`
 
 ### Backup a specific table
-`mysqldump -u root -p[password] [database] [table] > [database]_table.sql`
+`mysqldump -h [localhost] -u [root] -p[password] [database] [table] > [database]_table.sql`
 
 ### Restoring backups
 `mysql -u root -p[password] [database] < [database].sql`
