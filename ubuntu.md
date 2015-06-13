@@ -311,13 +311,13 @@ sudo mkdir -p /etc/nginx/ssl
 Create the private key and certificate signing request. The `-nodes` option means there will be no passphrase:
 
 ```bash
-sudo openssl req -nodes -newkey rsa:2048 -out /etc/nginx/ssl/mysite.com.crt -keyout /etc/nginx/ssl/mysite.com.key
+sudo openssl req -nodes -newkey rsa:2048 -out /etc/nginx/ssl/mysite.com.csr -keyout /etc/nginx/ssl/mysite.com.key
 ```
 
 Use the following command to use SHA256:
 
 ```bash
-sudo openssl req -nodes -sha256 -newkey rsa:2048 -out /etc/nginx/ssl/mysite.com.crt -keyout /etc/nginx/ssl/mysite.com.key
+sudo openssl req -nodes -sha256 -newkey rsa:2048 -out /etc/nginx/ssl/mysite.com.csr -keyout /etc/nginx/ssl/mysite.com.key
 ```
 
 When prompted for the **Common Name**, be sure to enter the **fully qualified domain name**. Example: `mysite.com` or `*.mysite.com` for multiple (wildcard) subdomains.
