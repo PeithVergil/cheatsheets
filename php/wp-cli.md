@@ -16,11 +16,22 @@ Download and configure Wordpress.
 --------------------------------------------------
 
 Download the latest Wordpress release:
-`wp core download`
 
+```bash
+wp core download
+```
+
+Check the version that was downloaded:
+
+```bash
+wp core version
+```
 
 Configure Wordpress:
-`wp core config --dbname=[mydb] --dbuser=[myuser] --dbpass=[mypass]`
+
+```bash
+wp core config --dbname=[mydb] --dbuser=[myuser] --dbpass=[mypass]
+```
 
 
 Create a new database using the configuration above:
@@ -28,14 +39,43 @@ Create a new database using the configuration above:
 
 
 Finalize the Wordpress installation:
-`wp core install --url="[www.mysite.com]" --title="[My Site]" --admin_user=[myadmin] --admin_email=[myemail@mysite.com] --admin_password=[mypass]`
+
+```bash
+wp core install --url="[www.mysite.com]" --title="[My Site]" --admin_user=[myadmin] --admin_email=[myemail@mysite.com] --admin_password=[mypass]
+```
 
 
-Install Plugins
+Themes
 --------------------------------------------------
-`wp plugin install [woocommerce]`
+
+Check the status of available themes:
+
+```bash
+wp theme status
+```
 
 
-Create plugin tests scaffold
+Plugins
 --------------------------------------------------
-`wp scaffold plugin-tests [myplugin]`
+
+Install a WordPress plugin:
+
+```bash
+wp plugin install [woocommerce]
+```
+
+Update a WordPress plugin:
+
+```bash
+wp plugin update [woocommerce]
+```
+
+
+Tests
+--------------------------------------------------
+
+Create tests for your plugin:
+
+```bash
+wp scaffold plugin-tests [myplugin]
+```
