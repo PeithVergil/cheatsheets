@@ -64,10 +64,22 @@ Install a WordPress plugin:
 wp plugin install [woocommerce]
 ```
 
+Check the status of available plugins:
+
+```bash
+wp plugin status
+```
+
 Update a WordPress plugin:
 
 ```bash
 wp plugin update [woocommerce]
+```
+
+Activate a WordPress plugin:
+
+```bash
+wp plugin activate [woocommerce]
 ```
 
 
