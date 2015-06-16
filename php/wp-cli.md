@@ -6,7 +6,10 @@ Installing WP-CLI.
 --------------------------------------------------
 
 Install WP-CLI globally using Composer:
-`composer global require "wp-cli/wp-cli"`
+
+```bash
+composer global require "wp-cli/wp-cli" --update-with-dependencies
+```
 
 
 Download and configure Wordpress.

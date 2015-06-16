@@ -4,4 +4,9 @@ PHPUnit
 
 Installation
 --------------------------------------------------
-`composer global require "phpunit/phpunit=4.5.*"`
+
+Install/update PHPUnit and update all dependencies:
+
+```bash
+composer global require "phpunit/phpunit=4.7.*" --update-with-dependencies
+```
