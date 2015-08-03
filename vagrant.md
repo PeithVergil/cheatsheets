@@ -32,6 +32,12 @@ Vagrant
 ### Removing boxes
 `vagrant box remove precise32 virtualbox`
 
+Repackage an existing box:
+
+```sh
+vagrant package --output example.box
+```
+
 
 Managing plugins
 ----------------------------------------
