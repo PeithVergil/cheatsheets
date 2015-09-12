@@ -4,8 +4,54 @@ Redis
 
 Installation
 --------------------------------------------------
-    sudo apt-get update
-    sudo apt-get install redis-server
+
+To install redis on Ubuntu:
+
+```bash
+sudo apt-get update
+sudo apt-get install redis-server
+```
+
+
+Manual Compilation
+--------------------------------------------------
+
+Update the repo cache:
+
+```bash
+sudo apt-get update
+```
+
+Install the build tools:
+
+```bash
+sudo apt-get install build-essential
+```
+
+Download the source code:
+
+```bash
+wget http://download.redis.io/redis-stable.tar.gz
+```
+
+Unpack the tar archive then change directory:
+
+```bash
+tar xvfz redis-stable.tar.gz
+cd redis-stable
+```
+
+Start the compilation:
+
+```bash
+make
+```
+
+Install system-wide:
+
+```bash
+sudo make install
+```
 
 
 Configurations
