@@ -16,6 +16,7 @@ Git
 ## Viewing revisions
     git log
     git log --graph
+    git log --oneline
 
 
 Branches
@@ -54,3 +55,25 @@ Branches
 
 ## Update the URL of the remote branch
 `git remote set-url [origin] [git://new.url.here]`
+
+
+Squashing Commits
+--------------------------------------------------
+
+Work with the last five commits in the repo. This will launch a text editor where you can edit commands.
+
+```bash
+git rebase -i HEAD~5
+```
+
+Use the `pick` command to select a commit as the destination. Use the `fixup` command to select commits as sources.
+
+```
+pick  a1376af51aac Commit message #1
+fixup 60e46b95d13f Commit message #2
+fixup aff725a8957b Commit message #3
+fixup 43995f662fd3 Commit message #4
+fixup 8948e8b6f943 Commit message #5
+```
+
+When done, just save and close the text editor. Commits #1 to #5 should now be just a single commit.
