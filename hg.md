@@ -166,3 +166,15 @@ Bookmarks
 
 #### Moving a bookmark backward
 `hg bookmark [mybookmark] -f -r [100]`
+
+
+Rebasing
+--------------------------------------------------
+
+**NOTE:** You can only rebase local commits that have not yet been shared to another repo.
+
+Use the `-s` option to select the source changeset. Select the very root of the branch as the source, not the tip. Use the `-d` option to mark the destination changeset.
+
+```bash
+hg rebase -s 123 -d 125
+```
