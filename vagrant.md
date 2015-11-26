@@ -72,3 +72,9 @@ NFS Synced Folders
       # Private network
       config.vm.network :private_network, ip: "192.168.111.123"
     end
+
+
+Troubleshooting
+----------------------------------------
+
+[Sync VirtualBox Guest Additions](http://kvz.io/blog/2013/01/16/vagrant-tip-keep-virtualbox-guest-additions-in-sync/)
