@@ -51,6 +51,12 @@ Managing plugins
 ### List all installed plugins
 `vagrant plugin list`
 
+Update a plugin:
+
+```bash
+vagrant plugin update vagrant-vbguest
+```
+
 
 NFS Synced Folders
 ----------------------------------------
