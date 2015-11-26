@@ -6,8 +6,8 @@ w # Jump to next word
 gg # Jump to top of file
 G  # Jump to end of file
 
-CTRL+B # Page up
-CTRL+F # Page down
+CTRL+b # Page up
+CTRL+f # Page down
 
 ##############################
 # Inserting text
