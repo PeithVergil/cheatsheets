@@ -13,11 +13,44 @@ Environments
 Create a new virtual environment:
 
 ```bash
-conda create --name [myenv] [package1] [package2] [package3]
+conda create --name [myenv] python
+```
+
+Remove a virtual environment:
+
+```bash
+conda remove --name [myenv] --all
 ```
 
 List all virtual environments:
 
 ```bash
 conda info --envs
+```
+
+Activate a virtual environment:
+
+```bash
+source activate [myenv]
+```
+
+Deactivate a virtual environment:
+
+```bash
+source deactivate
+```
+
+Packages
+--------------------------------------------------
+
+Update conda:
+
+```bash
+conda update conda
+```
+
+Update python:
+
+```bash
+conda update python
 ```
