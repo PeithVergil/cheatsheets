@@ -43,6 +43,18 @@ source deactivate
 Packages
 --------------------------------------------------
 
+List packages installed in the current virtual environment:
+
+```bash
+conda list
+```
+
+List packages installed in a specific virtual environment:
+
+```bash
+conda list --name [myenv]
+```
+
 Update conda:
 
 ```bash
