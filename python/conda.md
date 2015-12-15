@@ -55,13 +55,25 @@ List packages installed in a specific virtual environment:
 conda list --name [myenv]
 ```
 
-Update conda:
+Install a package:
+
+```bash
+conda install [package]
+```
+
+Install a package to a specific virtual environment:
+
+```bash
+conda install --name [myenv] [package]
+```
+
+Update the "conda" package:
 
 ```bash
 conda update conda
 ```
 
-Update python:
+Update the "python" package:
 
 ```bash
 conda update python
