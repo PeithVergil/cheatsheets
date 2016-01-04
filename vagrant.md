@@ -8,6 +8,18 @@ Vagrant
 ### Adding boxes from VagrantCloud
 `vagrant box add ubuntu/trusty32`
 
+Check if the boxes are outdated:
+
+```bash
+vagrant box outdated
+```
+
+Update outdated boxes:
+
+```bash
+vagrant box update
+```
+
 ### Initializing a new VM
 `vagrant init precise32`
 
