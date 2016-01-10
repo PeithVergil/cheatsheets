@@ -42,7 +42,18 @@ vagrant box update
 `vagrant box list`
 
 ### Removing boxes
-`vagrant box remove precise32 virtualbox`
+
+Remove a box:
+
+```bash
+vagrant box remove ubuntu/trusty32 virtualbox
+```
+
+Remove a box with a specific version:
+
+```bash
+vagrant box remove ubuntu/trusty32 --box-version 20151217.0.0
+```
 
 Repackage an existing box:
 
