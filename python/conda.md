@@ -78,3 +78,9 @@ Update the "python" package:
 ```bash
 conda update python
 ```
+
+Uninstall a package:
+
+```bash
+conda uninstall [package]
+```
