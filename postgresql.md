@@ -97,6 +97,12 @@ Databases
 #### Importing an SQL dump
 `sudo -u postgres psql [mydatabase] < mydatabasedump`
 
+Change the database owner:
+
+```sql
+ALTER DATABASE [mydatabase] OWNER TO [myusername];
+```
+
 
 Tables
 --------------------------------------------------
