@@ -68,6 +68,12 @@ Users, Groups, and Privileges
 #### Another way of creating a user
 `[mydatabase]=# CREATE USER [myusername] WITH PASSWORD '[mypassword]';`
 
+Change the user password:
+
+```sql
+ALTER ROLE [myusername] WITH PASSWORD '[mypassword]';
+```
+
 #### Granting privileges to the new user
 `[mydatabase]=# GRANT ALL ON DATABASE mydatabase TO [myusername];`
 
