@@ -67,6 +67,21 @@ Packages
     dpkg --list | less
     dpkg --list | grep -i keyword
 
+#### ERROR: Failed to fetch...
+
+Remove all the contents in `/var/lib/apt/lists`:
+
+```bash
+sudo rm -vf /var/lib/apt/lists/*
+```
+
+Update cache:
+
+```bash
+sudo apt-get clean
+sudo apt-get update
+```
+
 
 Processes
 --------------------------------------------------
