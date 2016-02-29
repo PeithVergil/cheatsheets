@@ -29,3 +29,10 @@ Symlink libraries
 Install Pillow
 --------------------------------------------------
 `pip install Pillow`
+
+
+If the following error appears: "fatal error: freetype/fterrors.h: No such file or directory", run the command below:
+
+```bash
+sudo ln -s /usr/include/freetype2 /usr/include/freetype
+```
