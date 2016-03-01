@@ -2,30 +2,194 @@ Laravel
 =======
 
 
-Installation
+Ubuntu
 --------------------------------------------------
 
-#### Download composer
-`php -r "readfile('https://getcomposer.org/installer');" | php`
+Update packages.
 
-#### Move and rename composer
-`sudo mv composer.phar /usr/local/bin/composer`
-
-#### Download the Laravel installer using Composer
-`composer global require "laravel/installer=~1.1"`
-
-#### Add Composer's bin directory to the system path
-`export PATH=~/.composer/vendor/bin:$PATH`
+```bash
+sudo apt-get update -y && sudo apt-get upgrade -y
+```
 
 
-Projects
+Apache
 --------------------------------------------------
 
-#### Creating a project
-`laravel new [myproject]`
+Install the Apache Web Server.
 
-#### Allow write permission to the `app/storage` directory
-`chmod -R 755 [myproject]/app/storage`
+```bash
+sudo apt-get install -y apache2
+```
+
+Enable `mod_rewrite`.
+
+```bash
+sudo a2enmod rewrite
+```
+
+Restart the server.
+
+```bash
+sudo service apache2 restart
+```
+
+#### Development Environment
+
+Edit `envvars`.
+
+```bash
+sudo vim /etc/apache2/envvars
+```
+
+Change system user.
+
+```bash
+export APACHE_RUN_USER=vagrant
+export APACHE_RUN_GROUP=vagrant
+```
+
+Edit the enabled virtual host file.
+
+```bash
+sudo vim /etc/apache2/sites-available/000-default.conf
+```
+
+Update some of the values.
+
+```xml
+<VirtualHost *:80>
+        ...
+        
+        DocumentRoot /vagrant/myproject/public
+
+        <Directory "/vagrant/myproject/public">
+            Options Indexes FollowSymLinks
+            AllowOverride All
+            Require all granted
+        </Directory>
+
+        ...
+
+        ErrorLog /vagrant/logs/error.log
+        CustomLog /vagrant/logs/access.log combined
+        
+        ...
+</VirtualHost>
+```
+
+Restart the server.
+
+```bash
+sudo service apache2 restart
+```
+
+
+MySQL
+--------------------------------------------------
+
+Install the MySQL server.
+
+```bash
+sudo apt-get install -y mysql-server
+```
+
+#### Development Environment
+
+Root Password: **abcdef**
+
+Edit config file.
+
+```bash
+sudo vim /etc/mysql/my.cnf
+```
+
+Listen to all address.
+
+```ini
+bind-address = 0.0.0.0
+```
+
+Restart the server.
+
+```bash
+sudo service mysql restart
+```
+
+
+PHP
+--------------------------------------------------
+
+Install PHP.
+
+```bash
+sudo apt-get install -y php5
+```
+
+Install PHP extensions.
+
+```bash
+sudo apt-get install -y php5-curl php5-mysql php5-mcrypt
+```
+
+
+Composer
+--------------------------------------------------
+
+Download `composer`.
+
+```bash
+php -r "readfile('https://getcomposer.org/installer');" | php
+```
+
+Move `composer` to `/usr/local/bin/`.
+
+```bash
+sudo mv composer.phar /usr/local/bin/composer
+```
+
+
+Laravel Installation and Setup
+--------------------------------------------------
+
+Download and install Laravel.
+
+```bash
+composer global require "laravel/installer"
+```
+
+Edit `.bashrc`
+
+```bash
+vim ~/.bashrc
+```
+
+Add composer's bin directory to the system path.
+
+```bash
+export PATH=~/.composer/vendor/bin:$PATH
+```
+
+
+Laravel Usage
+--------------------------------------------------
+
+Creating a project.
+
+```bash
+laravel new myproject
+```
+
+Allow write permission to the `storage` directory.
+
+```bash
+chmod -R 755 myproject/storage
+```
+
+Allow write permission to the `cache` directory.
+
+```bash
+chmod -R 755 myproject/bootstrap/cache
+```
 
 
 Controllers
