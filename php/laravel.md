@@ -131,6 +131,10 @@ Install PHP extensions.
 sudo apt-get install -y php5-curl php5-mysql php5-mcrypt
 ```
 
+```bash
+sudo apt-get install curl libcurl3 libcurl3-dev
+```
+
 
 Composer
 --------------------------------------------------
