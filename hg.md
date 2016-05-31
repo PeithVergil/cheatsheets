@@ -6,17 +6,28 @@ Installation
 `sudo apt-get install mercurial`
 
 
-Configuration (~/.hgrc)
+Configuration
 --------------------------------------------------
 
-#### Set username
+Edit the config file:
+
+```bash
+vim ~/.hgrc
+```
+
+Add the following lines to the file:
+
+```
 [ui]
 username = Peith Vergil <peith.vergil@gmail.com>
+editor = vim
+merge = internal:merge
 
-#### Enable extensions
 [extensions]
+rebase =
 color =
 hggit = 
+```
 
 
 Generating an SSH key
