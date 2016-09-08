@@ -181,7 +181,7 @@ File Sharing
 
 #### File sharing using NFS
 
-Check if the NTF server is already installed:
+Check if the NFS server is already installed:
 
 ```bash
 dpkg -l | grep nfs-kernel-server
