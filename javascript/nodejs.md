@@ -4,14 +4,30 @@ Node.js
 
 Installation
 --------------------------------------------------
-```bash
-sudo apt-get update
+
+To install `nodejs` using the Ubuntu package manager:
+
+```sh
 sudo apt-get install nodejs npm
 ```
 
-On Ubuntu, the NodeJS executable is called "nodejs", NPM expects it to be called "node". So, we need to create a symlink like this:
+To install the latest `nodejs` from PPA, update packages the repository.
 
-`sudo ln -s /usr/bin/nodejs /usr/bin/node`
+```sh
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+```
+
+Then, install `nodejs` and `npm`:
+
+```sh
+sudo apt-get install nodejs
+```
+
+**This step might be optional.** On Ubuntu, the executable is called **nodejs**, but `npm` expects it to be **node**. So, we need to create a symbolic link like this:
+
+```sh
+sudo ln -s /usr/bin/nodejs /usr/bin/node
+```
 
 
 Change the `npm` prefix
