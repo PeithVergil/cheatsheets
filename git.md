@@ -52,6 +52,18 @@ Branches
 #### Renaming the current branch
 `git branch -m [newname]`
 
+Delete a local branch.
+
+```sh
+git branch -d mybranch
+```
+
+Delete a remote branch.
+
+```sh
+git push origin :mybranch
+```
+
 
 ## Edit the last commit message
 `git commit --amend -m "New commit message"`
