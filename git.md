@@ -82,6 +82,22 @@ git push origin :mybranch
 `git remote set-url [origin] [git://new.url.here]`
 
 
+Rebasing
+--------------------------------------------------
+
+To rebase one branch onto another, select the branch that will be moved.
+
+```bash
+git checkout source-branch
+```
+
+Then, rebase the selected branch to another.
+
+```bash
+git rebase target-branch
+```
+
+
 Squashing Commits
 --------------------------------------------------
 
