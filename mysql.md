@@ -93,6 +93,16 @@ Alter Tables
 ## Droping foreign key constraints
 `ALTER TABLE [mytable] DROP FOREIGN KEY [foreign key constraint];`
 
+Adding a foreign key to an existing table (`user`) that references another table (`profile`).
+
+```sql
+ALTER TABLE user ADD profile_id INT NOT NULL DEFAULT 0;
+```
+
+```sql
+ALTER TABLE user ADD CONSTRAINT fk_profile_id FOREIGN KEY (profile_id) REFERENCES profile(id);
+```
+
 
 Backup and Restore
 --------------------------------------------------
