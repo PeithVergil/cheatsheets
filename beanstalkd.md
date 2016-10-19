@@ -70,13 +70,21 @@ Fetch a job from the queue.
 job = beanstalk.reserve()
 ```
 
+Display stats about the job.
+
+```python
+from pprint import pprint
+
+pprint(job.stats())
+```
+
 Delete a job when done.
 
 ```python
 job.delete()
 ```
 
-Select a job queue. Selecting a job queue for the first time creates it.
+Select a job queue (tube). Selecting a job queue for the first time creates it.
 
 ```python
 beanstalk.use('notifications')
