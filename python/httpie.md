@@ -1,5 +1,5 @@
 HTTPie
-===
+======
 
 
 Options
@@ -10,6 +10,7 @@ Options
 | **-d**  | **--download** | Download mode        |
 | **-v**  | **--verbose**  | Verbose mode         |
 | **-f**  | **--form**     | Form data            |
+| **-j**  | **--json**     | JSON data (default)  |
 
 
 HTTP Methods
@@ -29,7 +30,7 @@ HTTP Methods
 
 ### POST
 
-Sending a JSON data:
+HTTPie sends JSON encoded data by default:
 
 ```bash
 http POST [example.org] < [example.json]
