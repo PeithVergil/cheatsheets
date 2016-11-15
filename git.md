@@ -64,6 +64,17 @@ Delete a remote branch.
 git push origin :mybranch
 ```
 
+Fetching a remote branch.
+
+```sh
+git fetch origin remote-branch
+```
+
+The fetched `remote-branch` will be stored in FETCH_HEAD. Create a new branch from `FETCH_HEAD`.
+
+```sh
+git checkout -b new-branch FETCH_HEAD
+```
 
 ## Edit the last commit message
 `git commit --amend -m "New commit message"`
