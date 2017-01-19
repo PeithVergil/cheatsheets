@@ -8,6 +8,7 @@ c – create new archive
 x – extract from archive  
 v – verbose mode  
 f – archive file name  
+J - archive through xz
 z – archive through gzip
 j – archive through bzip2
 
@@ -17,6 +18,9 @@ Creating an archive
 
 ### tar archive
 `tar cvf myarchive.tar dirname/`
+
+### tar xz archive
+`tar cvfJ myarchive.tar.xz dirname/`
 
 ### tar gzipped archive
 `tar cvfz myarchive.tar.gz dirname/`
