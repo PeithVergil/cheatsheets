@@ -73,7 +73,9 @@ MySQL
 
 
 ## Creating a database
-`CREATE DATABASE [database] CHARACTER SET utf8;`
+```mysql
+CREATE DATABASE [database] CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+```
 
 
 ## Displaying results vertically
