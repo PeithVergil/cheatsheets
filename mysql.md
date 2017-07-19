@@ -109,6 +109,12 @@ ALTER TABLE user ADD CONSTRAINT fk_profile_id FOREIGN KEY (profile_id) REFERENCE
 Backup and Restore
 --------------------------------------------------
 
+##### Options for `mysqldump`
+*   **-d, --no-data**
+*   **-R, --routines**
+*   **-n, --no-create-db**
+*   **-t, --no-create-info**
+
 ### Backup a single database
 `mysqldump -h [localhost] -u [root] -p[password] [database] > [database].sql`
 
@@ -120,6 +126,9 @@ Backup and Restore
 
 ### Backup a specific table
 `mysqldump -h [localhost] -u [root] -p[password] [database] [table] > [database]_table.sql`
+
+### Backup a stored procedure
+`mysqldump -R -d -n -t -h [localhost] -u [root] -p[password] [database] > [database]_routines.sql`
 
 ### Restoring backups
 `mysql -u root -p[password] [database] < [database].sql`
