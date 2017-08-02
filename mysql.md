@@ -106,6 +106,34 @@ ALTER TABLE user ADD CONSTRAINT fk_profile_id FOREIGN KEY (profile_id) REFERENCE
 ```
 
 
+Stored Procedures
+--------------------------------------------------
+
+## List all stored procedures
+
+```sql
+SHOW PROCEDURE STATUS;
+```
+
+## List all stored procedures from a specific database
+
+```sql
+SHOW PROCEDURE STATUS WHERE db = 'mydatabase';
+```
+
+## Show stored procedure code.
+
+```sql
+SHOW CREATE PROCEDURE mystoredprocedure;
+```
+
+## Delete a stored procedure.
+
+```sql
+DROP PROCEDURE IF EXISTS mystoredprocedure;
+```
+
+
 Backup and Restore
 --------------------------------------------------
 
