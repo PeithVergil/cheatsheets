@@ -24,6 +24,10 @@ HTTP Methods
 
 `http -v GET [example.org] fname==hello lname==world`
 
+### Disable SSL certificate verification
+
+`http -v --verify=no GET [example.org] fname==hello lname==world`
+
 ### PUT
 
 `http -v PUT [example.org] [hello=world]`
