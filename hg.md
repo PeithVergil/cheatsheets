@@ -189,3 +189,9 @@ Use the `-s` option to select the source changeset. Select the very root of the 
 ```bash
 hg rebase -s 123 -d 125
 ```
+
+Collapse changesets while rebasing by passing the `--collapse` option.
+
+```bash
+hg rebase -s 123 -d 125 --collapse
+```
