@@ -82,6 +82,27 @@ sudo apt-get clean
 sudo apt-get update
 ```
 
+#### Manually adding a PPA source.
+
+Create a new file in `/etc/apt/sources.list.d`. Note the `.list` file extension. The example below will add a Blender PPA source.
+
+```bash
+sudo vi /etc/apt/sources.list.d/blender.list
+```
+
+Add the following lines into the new file and save.
+
+```
+deb http://ppa.launchpad.net/thomas-schiex/blender/ubuntu xenial main
+deb-src http://ppa.launchpad.net/thomas-schiex/blender/ubuntu xenial main
+```
+
+Add the PPA key.
+
+```bash
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 7281E3E842A98114
+```
+
 
 Processes
 --------------------------------------------------
