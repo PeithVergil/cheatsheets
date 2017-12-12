@@ -76,6 +76,12 @@ The fetched `remote-branch` will be stored in FETCH_HEAD. Create a new branch fr
 git checkout -b new-branch FETCH_HEAD
 ```
 
+Cloning a specific remote branch.
+
+```sh
+git clone -b [mybranch] [git://new.url.here]
+```
+
 ## Edit the last commit message
 `git commit --amend -m "New commit message"`
 
