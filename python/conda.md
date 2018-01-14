@@ -61,10 +61,17 @@ Install a package:
 conda install [package]
 ```
 
-Install a package to a specific virtual environment:
+Install a package from a different channel (conda-forge):
 
 ```bash
 conda install --name [myenv] [package]
+
+Install a package to a specific virtual environment:
+
+```bash
+conda install [package] -c conda-forge
+```
+
 ```
 
 Update the "conda" package:
