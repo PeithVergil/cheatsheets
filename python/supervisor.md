@@ -12,6 +12,15 @@ sudo apt-get install supervisor
 ```
 
 
+Printing the default config.
+--------------------------------------------------
+echo_supervisord_conf
+
+Creating a default config file.
+--------------------------------------------------
+echo_supervisord_conf > /etc/supervisord.conf
+
+
 Creating a program
 --------------------------------------------------
 
