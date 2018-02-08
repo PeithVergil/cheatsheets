@@ -119,20 +119,22 @@ sudo service mysql restart
 PHP
 --------------------------------------------------
 
-Install PHP.
+Install build tools.
 
 ```bash
-sudo apt-get install -y php5
+sudo apt-get install build-essential curl libcurl3 libcurl3-dev
 ```
 
-Install PHP extensions.
+Install PHP 7.0.
 
 ```bash
-sudo apt-get install -y php5-curl php5-mysql php5-mcrypt
+sudo apt-get install -y php7.0
 ```
 
+Install some PHP 7.0 extensions.
+
 ```bash
-sudo apt-get install curl libcurl3 libcurl3-dev
+sudo apt-get install -y php7.0-gd php7.0-xml php7.0-zip php7.0-curl php7.0-mysql php7.0-mcrypt php7.0-mbstring
 ```
 
 
