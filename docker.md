@@ -24,7 +24,7 @@ Show all images that are cached locally.
 docker image ls
 ```
 
-Remove an image by its ID _(f2a91732366c)_.
+Remove an image _(ID: f2a91732366c)_.
 
 ```bash
 docker rmi f2a91732366c
@@ -42,8 +42,20 @@ Show all containers that are cached locally.
 docker container ls --all
 ```
 
-Remove a container by its ID _(6d6ecf809b63)_.
+Remove a container _(ID: 6d6ecf809b63)_.
 
 ```bash
 docker rm 6d6ecf809b63
+```
+
+Run a container in interactive mode.
+
+```bash
+docker run -i -t ubuntu:16.04
+```
+
+Re-attach a container _(ID: 4c690aaba373)_, that was closed, back to the terminal.
+
+```bash
+docker start -i 4c690aaba373
 ```
