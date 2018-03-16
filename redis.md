@@ -59,12 +59,39 @@ sudo make install
 Configurations
 --------------------------------------------------
 
-#### Open config file
-`vim /etc/redis/redis.conf`
+On Ubuntu, the config file is located at `/etc/redis/redis.conf`. Edit this file to change the default settings.
 
-#### Set values
-    port 6379
-    bind 127.0.0.1
+```bash
+vim /etc/redis/redis.conf
+```
+
+Here are some settings to look into:
+
+```
+# Network settings.
+bind 127.0.0.1
+port 6379
+
+# Limit the amount of memory that
+# will be used for the data set.
+maxmemory 100mb
+
+# If a memory limit is set, it's a good idea
+# to set an eviction policy, otherwise, Redis
+# will just throw an error once the limit is
+# reached.
+#
+# Remove keys that are least recently used (LRU).
+maxmemory-policy allkeys-lru
+
+# Remove keys that are least frequently used (LFU).
+# maxmemory-policy allkeys-lfu
+
+# This is used by Redis' LRU algorithm. A sample of
+# 5 is good enough, 10 would give even more accurate
+# results at the cost of higher CPU usage.
+maxmemory-samples 5
+```
 
 
 Compiling from source
