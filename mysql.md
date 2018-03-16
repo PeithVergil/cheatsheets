@@ -2,7 +2,15 @@ MySQL
 =====
 
 ## Installation
-`sudo apt-get install mysql-server`
+```bash
+sudo apt-get install mysql-server
+```
+
+Or to install MariaDB
+
+```bash
+sudo apt-get install mariadb-server
+```
 
 
 ## Configuration
@@ -11,6 +19,7 @@ MySQL
         vim /etc/mysql/my.cnf
 
 2.  Change the following values
+        [mysqld]
         bind-address = 0.0.0.0
         default-storage-engine = INNODB
 
@@ -28,7 +37,15 @@ MySQL
 
 
 ## Connecting to the server
-`mysql --host=[localhost] --user=[root] --password='[password]' --database='[database]'`
+```bash
+mysql --host=[localhost] --user=[root] --password='[password]' --database='[database]'
+```
+
+On Ubuntu 16.04, logging in as `root@localhost` to the MariaDB server requires `sudo`.
+
+```bash
+sudo mysql -u root
+```
 
 
 ## Creating a new user
@@ -160,3 +177,19 @@ Backup and Restore
 
 ### Restoring backups
 `mysql -u root -p[password] [database] < [database].sql`
+
+
+Character Set and Collation
+--------------------------------------------------
+
+Display character sets.
+
+```sql
+SHOW VARIABLES LIKE 'char%';
+```
+
+Display collations.
+
+```sql
+SHOW VARIABLES LIKE 'collation%';
+```
