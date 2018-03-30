@@ -8,6 +8,14 @@ npm install -g typescript --prefix=/path/to/directory
 Make sure you add `/path/to/directory/bin` to the system `$PATH`.
 
 
+Updating the TypeScript compiler
+--------------------------------
+
+```bash
+npm update -g typescript --prefix=/path/to/directory
+```
+
+
 Compiling `.ts` to `.js`
 ------------------------
 
