@@ -48,10 +48,10 @@ Remove a container _(ID: 6d6ecf809b63)_.
 docker rm 6d6ecf809b63
 ```
 
-Run a container in interactive mode.
+Run a container in interactive mode. Name the container _helloworld_.
 
 ```bash
-docker run -i -t ubuntu:16.04
+docker run -i -t --name helloworld ubuntu:16.04
 ```
 
 Re-attach a container _(ID: 4c690aaba373)_, that was closed, back to the terminal.
