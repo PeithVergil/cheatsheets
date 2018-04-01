@@ -23,6 +23,24 @@ Use `nvm` to activate the installed `node`.
 nvm use node
 ```
 
+Display all installed versions.
+
+```sh
+nvm ls
+```
+
+Use `nvm` to display the current active version.
+
+```sh
+nvm current
+```
+
+Display the path of the current active version.
+
+```sh
+nvm which v9.4.0
+```
+
 
 To install `nodejs` using the Ubuntu package manager:
 
