@@ -59,3 +59,15 @@ Re-attach a container _(ID: 4c690aaba373)_, that was closed, back to the termina
 ```bash
 docker start -i 4c690aaba373
 ```
+
+Stop a running container _(ID: 4c690aaba373)_.
+
+```bash
+docker stop 4c690aaba373
+```
+
+Create an image from a `Dockerfile`.
+
+```bash
+docker build -t myimage .
+```
