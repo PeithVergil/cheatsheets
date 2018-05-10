@@ -11,10 +11,22 @@ Install the [Node Version Manager](https://github.com/creationix/nvm).
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
 ```
 
+Display all versions available for installation.
+
+```sh
+nvm ls-remote
+```
+
 Use `nvm` to install the latest `node` release.
 
 ```sh
 nvm install node
+```
+
+Migrate global packages from an old installation to a new installation.
+
+```sh
+nvm install node --reinstall-packages-from=v9.4.0
 ```
 
 Use `nvm` to activate the installed `node`.
@@ -39,6 +51,12 @@ Display the path of the current active version.
 
 ```sh
 nvm which v9.4.0
+```
+
+Uninstall an old installation.
+
+```sh
+nvm uninstall v9.4.0
 ```
 
 
@@ -74,6 +92,12 @@ Installing a package to a specific directory.
 
 ```sh
 npm install -g typescript --prefix=/path/to/directory
+```
+
+Uninstalling a package.
+
+```sh
+npm uninstall infinite-scroll --save
 ```
 
 
