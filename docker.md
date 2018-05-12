@@ -27,7 +27,7 @@ docker image ls
 Remove an image _(ID: f2a91732366c)_.
 
 ```bash
-docker rmi f2a91732366c
+docker image rm f2a91732366c
 ```
 
 Show all containers that are running.
@@ -45,13 +45,17 @@ docker container ls --all
 Remove a container _(ID: 6d6ecf809b63)_.
 
 ```bash
-docker rm 6d6ecf809b63
+docker container rm 6d6ecf809b63
 ```
 
 Run a container in interactive mode. Name the container _helloworld_.
 
+Options:  
+`-i` Interactive  
+`-t` TTY  
+
 ```bash
-docker run -i -t --name helloworld ubuntu:16.04
+docker run -it --name helloworld ubuntu:16.04
 ```
 
 Re-attach a container _(ID: 4c690aaba373)_, that was closed, back to the terminal.
@@ -70,4 +74,16 @@ Create an image from a `Dockerfile`.
 
 ```bash
 docker build -t myimage .
+```
+
+Execute a command against a running container.
+
+```bash
+docker exec -it mycontainer /bin/bash
+```
+
+Save a running container into a new image.
+
+```bash
+docker commit mycontainer mycontainer:latest
 ```
