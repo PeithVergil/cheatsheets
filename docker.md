@@ -42,6 +42,12 @@ Show all containers that are cached locally.
 docker container ls --all
 ```
 
+Stop a container _(ID: 6d6ecf809b63)_.
+
+```bash
+docker container stop 6d6ecf809b63
+```
+
 Remove a container _(ID: 6d6ecf809b63)_.
 
 ```bash
