@@ -4,7 +4,7 @@ conda
 Download
 --------------------------------------------------
 
-Download the installer [here](http://conda.pydata.org/miniconda.html).
+Download the installer [here](https://conda.io/miniconda.html).
 
 
 Environments
