@@ -46,7 +46,7 @@ vagrant box update
 Remove a box:
 
 ```bash
-vagrant box remove ubuntu/trusty32 virtualbox
+vagrant box remove ubuntu/trusty32 --provider virtualbox
 ```
 
 Remove a box with a specific version:
