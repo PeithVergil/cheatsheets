@@ -1,6 +1,31 @@
 Django
 ======
 
+Installation
+--------------------------------------------------
+
+```bash
+pip install Django
+```
+
+Create a new Django project.
+
+```bash
+django-admin startproject myapp
+```
+
+Run the migrations.
+
+```bash
+python manage.py migrate
+```
+
+Create a super user.
+
+```bash
+python manage.py createsuperuser
+```
+
 
 Management commands
 --------------------------------------------------
