@@ -5,16 +5,22 @@ Node.js
 Installation
 --------------------------------------------------
 
-Install the [Node Version Manager](https://github.com/creationix/nvm).
+Install the [Node Version Manager](https://github.com/creationix/nvm). Change the version number (v0.33.8) to the latest value.
 
 ```sh
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 ```
 
 Display all versions available for installation.
 
 ```sh
 nvm ls-remote
+```
+
+Display all versions available on local computer.
+
+```sh
+nvm ls
 ```
 
 Use `nvm` to install the latest `node` release.
@@ -98,6 +104,18 @@ Uninstalling a package.
 
 ```sh
 npm uninstall infinite-scroll --save
+```
+
+Checking for outdated global packages.
+
+```sh
+npm outdated -g --prefix=/path/to/directory
+```
+
+Updating global packages.
+
+```sh
+npm update -g --prefix=/path/to/directory
 ```
 
 
