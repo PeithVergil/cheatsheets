@@ -13,10 +13,17 @@ Git
     git config --global user.name "Your Name"
     git config --global user.email "youremail@yourdomain.com"
 
+Use a different SSH key.
+
+```bash
+git config core.sshCommand "ssh -i /path/to/sshkey -F /dev/null"
+```
+
 ## Viewing revisions
     git log
     git log --graph
     git log --oneline
+    git log --reverse
 
 
 Remove a file from the repository.
