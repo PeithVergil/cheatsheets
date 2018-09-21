@@ -35,3 +35,9 @@ Install the packages specified in the composer file.
 ```bash
 composer install
 ```
+
+Creating a `composer.json`:
+
+```bash
+composer init
+```
