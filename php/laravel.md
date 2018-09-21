@@ -209,13 +209,51 @@ Migrations
 --------------------------------------------------
 
 ##### Creating a migration
-`php artisan migrate:make create_user_table`
+```bash
+php artisan make:migration create_user_table
+```
 
 ##### Creating a migration with a "table creation" template
-`php artisan migrate:make create_users_table --table=users --create`
+```bash
+php artisan make:migration create_users_table --create=users
+```
 
 ##### Running all outstanding migrations
-`php artisan migrate`
+```bash
+php artisan migrate
+```
+
+Rollback the last migration.
+
+```bash
+php artisan migrate:rollback
+```
+
+
+Models
+--------------------------------------------------
+
+Create a new model.
+
+```bash
+php artisan make:model Profile
+```
+
+Create a new model and a migration.
+
+```bash
+php artisan make:model Profile --migration
+```
+
+
+Model Observers
+--------------------------------------------------
+
+Create a new model observer.
+
+```bash
+php artisan make:observer ProfileObserver --model=Profile
+```
 
 
 Autoloading Libraries
@@ -233,3 +271,104 @@ Autoloading Libraries
         },
 2.  Enter the following command at the command line:
         composer dump-autoload
+
+
+Commands
+--------------------------------------------------
+
+Creating a new command
+
+```bash
+php artisan make:command SendTestEmail
+```
+
+Example command script:
+
+```php
+<?php
+
+namespace App\Console\Commands;
+
+
+use Mail;
+use Illuminate\Console\Command;
+
+
+class SendTestEmail extends Command
+{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'sendtestemail';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Send a test email.';
+
+    /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    /**
+     * Execute the console command.
+     *
+     * @return mixed
+     */
+    public function handle()
+    {
+        $user = 'hello.world@example.com';
+        $name = 'Hello World';
+
+        Mail::send('emails.sendtestemail', ['user' => $user, 'name' => $name], function($mailer) {
+            $mailer->from('contact@example.com', 'My Web Application');
+
+            $mailer->to($user, $name)->subject('Your Reminder!');
+        });
+    }
+}
+```
+
+
+Tests
+--------------------------------------------------
+
+Creating a unit test
+
+```bash
+php artisan make:test MailmanTest
+```
+
+Example unit test:
+
+```php
+<?php
+
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
+
+
+class MailmanTest extends TestCase
+{
+    /**
+     * A basic test example.
+     *
+     * @return void
+     */
+    public function testSend()
+    {
+        $this->assertTrue(true);
+    }
+}
+```
