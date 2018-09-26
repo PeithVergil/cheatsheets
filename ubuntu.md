@@ -308,6 +308,9 @@ SSH
 #### Logging in to a remote server
 `ssh myusername@192.168.111.222`
 
+#### Logging in to a remote server with a port
+`ssh myusername@192.168.111.222 -p 2222`
+
 #### Logging in to a remote server with a different private key
 `ssh myusername@192.168.111.222 -i ~/myprivatekey`
 
@@ -357,3 +360,45 @@ sudo openssl req -nodes -sha256 -newkey rsa:2048 -out /etc/nginx/ssl/mysite.com.
 ```
 
 When prompted for the **Common Name**, be sure to enter the **fully qualified domain name**. Example: `mysite.com` or `*.mysite.com` for multiple (wildcard) subdomains.
+
+
+Find
+--------------------------------------------------
+
+#### Options
+
+| Option          | Description                                             |
+|:---------------:|:-------------------------------------------------------:|
+| **-O1**         | Filter by file name first. (default)                    |
+| **-O2**         | File name first, then file type.                        |
+| **-O3**         | Allow to optimize however the hell it wants.            |
+| **-maxdepth X** | Limit the depth of subdirectories to search.            |
+| **-iname**      | Ignore text casing.                                     |
+| **-not**        | Return results that does not match the test expression. |
+| **-type f**     | Search for files.                                       |
+| **-type d**     | Search for directories.                                 |
+
+#### Examples
+
+Find "README.md" in the current and subdirectories.
+
+```bash
+find . -name README.md
+```
+
+Find "jpg" files in `/home`.
+
+```bash
+find /home -name "*.jpg"
+```
+
+Find "html" files in `/var/www`. The `-L` option is used to follow symbolic links.
+
+```bash
+find -O3 -L /var/www/ -name "*.html"
+
+Find "html" files in `/var/www`. The `-iname` option is used to match both upper and lower case.
+
+```bash
+find -O3 -L /var/www/ -iname "*.html"
+```
