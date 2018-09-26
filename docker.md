@@ -18,6 +18,8 @@ Show information about the installed `docker` service.
 docker version
 ```
 
+#### Image
+
 Show all images that are cached locally.
 
 ```bash
@@ -29,6 +31,8 @@ Remove an image _(ID: f2a91732366c)_.
 ```bash
 docker image rm f2a91732366c
 ```
+
+#### Container
 
 Show all containers that are running.
 
@@ -64,6 +68,12 @@ Options:
 docker run -it --name helloworld ubuntu:16.04
 ```
 
+Run a container and mount the current working directory inside the container.
+
+```bash
+docker run -it --rm --name example --mount type=bind,source="$(pwd)",target=/project --publish 8000:8000 python:3.7-alpine /bin/sh
+```
+
 Re-attach a container _(ID: 4c690aaba373)_, that was closed, back to the terminal.
 
 ```bash
@@ -76,10 +86,16 @@ Stop a running container _(ID: 4c690aaba373)_.
 docker stop 4c690aaba373
 ```
 
-Create an image from a `Dockerfile`.
+Create an image from a `Dockerfile` in the current directory.
 
 ```bash
-docker build -t myimage .
+docker build --rm --tag myimage .
+```
+
+Create an image from a `Dockerfile` in a different directory.
+
+```bash
+docker build --rm --tag myimage --file /path/to/Dockerfile .
 ```
 
 Execute a command against a running container.
@@ -92,4 +108,22 @@ Save a running container into a new image.
 
 ```bash
 docker commit mycontainer mycontainer:latest
+```
+
+
+Docker Compose
+==============
+
+Installation
+------------
+
+```bash
+pip install docker-compose
+```
+
+Usage
+-----
+
+```bash
+docker-compose up
 ```
