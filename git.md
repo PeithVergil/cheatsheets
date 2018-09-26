@@ -106,6 +106,63 @@ git clone -b [mybranch] [git://new.url.here]
 `git remote set-url [origin] [git://new.url.here]`
 
 
+Tagging
+--------------------------------------------------
+
+**Options:**
+| Option | Description                          |
+|:------:|:------------------------------------:|
+| **-a** | Create an annotated tag.             |
+| **-m** | A message stored with the tag.       |
+| **-l** | List tags matching wildcard pattern. |
+
+Creating a **lightweight** tag. A lightweight tag is just a pointer to a specific commit.
+
+```bash
+git tag v1.2.3b
+```
+
+Creating an **annotated** tag. An annotated tag is stored as a full object containing the tagger name, email, date, message, etc.
+
+```bash
+git tag -a v1.2.3 -m "This is version 1.2.3"
+```
+
+Display all tags.
+
+```bash
+git tag
+```
+
+Display tags that match a given wildcard pattern.
+
+```bash
+git tag -l "v1.*"
+```
+
+Show details about a particular tag.
+
+```bash
+git show v1.2.3
+```
+
+Delete a tag.
+
+```bash
+git tag -d v1.2.3b
+```
+
+#### Workflows
+
+Archiving a branch.
+
+```bash
+git tag archive/PT-150 feature/PT-150
+git branch -d feature/PT-150
+git checkout master
+```
+
+
 Rebasing
 --------------------------------------------------
 
