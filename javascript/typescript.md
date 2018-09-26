@@ -46,9 +46,9 @@ Example `tsconfig.json`:
 ```json
 {
     "compilerOptions": {
+        "strictNullChecks": true,
         "noImplicitAny": true,
         "sourceMap": true,
-        "allowJs": true,
         "outDir": "./dist/",
         "module": "es6",
         "target": "es5",
@@ -73,12 +73,16 @@ module.exports = {
             {
                 test: /\.tsx$/,
                 loader: 'ts-loader',
-                exclude: /node_modules/,
+                include: [
+                    path.resolve(__dirname, 'src'),
+                ],
             },
             {
                 test: /\.ts$/,
                 loader: 'ts-loader',
-                exclude: /node_modules/,
+                include: [
+                    path.resolve(__dirname, 'src'),
+                ],
             },
         ],
     },
