@@ -179,6 +179,22 @@ git rebase target-branch
 ```
 
 
+Undoing Commits
+--------------------------------------------------
+
+Undo the last commit and never see it again.
+
+```bash
+git reset --hard HEAD~1
+```
+
+Undo the last commit but keep the changes.
+
+```bash
+git reset HEAD~1
+```
+
+
 Squashing Commits
 --------------------------------------------------
 
