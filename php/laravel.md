@@ -122,19 +122,25 @@ PHP
 Install build tools.
 
 ```bash
-sudo apt-get install build-essential curl libcurl3 libcurl3-dev
+sudo apt-get install build-essential curl libcurl4 libcurl4-dev
 ```
 
-Install PHP 7.0.
+Add PPA.
 
 ```bash
-sudo apt-get install -y php7.0
+sudo add-apt-repository ppa:ondrej/php
 ```
 
-Install some PHP 7.0 extensions.
+Install PHP 7.3.
 
 ```bash
-sudo apt-get install -y php7.0-gd php7.0-xml php7.0-zip php7.0-curl php7.0-mysql php7.0-mcrypt php7.0-mbstring
+sudo apt-get install -y php7.3
+```
+
+Install some PHP 7.3 extensions.
+
+```bash
+sudo apt-get install -y php7.3-gd php7.3-xml php7.3-zip php7.3-curl php7.3-mysql php7.3-mbstring
 ```
 
 
