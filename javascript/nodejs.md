@@ -5,7 +5,7 @@ Node.js
 Installation
 --------------------------------------------------
 
-Install the [Node Version Manager](https://github.com/creationix/nvm). Change the version number (v0.33.8) to the latest value.
+Install the [Node Version Manager](https://github.com/creationix/nvm). Change the version number (v0.33.11) to the latest value.
 
 ```sh
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
@@ -27,6 +27,12 @@ Use `nvm` to install the latest `node` release.
 
 ```sh
 nvm install node
+```
+
+Use `nvm` to install the latest `node` LTS release.
+
+```sh
+nvm install --lts
 ```
 
 Migrate global packages from an old installation to a new installation.
