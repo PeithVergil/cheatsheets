@@ -43,6 +43,9 @@ Babel + Webpack
 
 ```bash
 npm install --save-dev babel-core babel-loader babel-preset-env webpack webpack-cli
+
+# Newer version
+npm install --save-dev @babel/core babel-loader @babel/preset-env webpack webpack-cli
 ```
 
 In `webpack.config.js`:
