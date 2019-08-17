@@ -5,21 +5,28 @@ Quasar
 Installation
 ------------
 
+Install the Quasar CLI.
 
 ```bash
-npm install -g vue-cli quasar-cli
+npm install -g @quasar/cli
+
+# Install to a different directory.
+npm install -g @quasar/cli --prefix=/path/to/directory
 ```
+
+Usage
+-----
 
 Create a new project.
 
 ```bash
-quasar init my-app
+quasar create MySampleProject
 ```
 
 Run the new project.
 
 ```bash
-cd my-app
+cd MySampleProject
 ```
 
 ```bash
@@ -42,4 +49,19 @@ Creating a new store module.
 
 ```bash
 quasar new store MyStore
+```
+
+Upgrade
+-------
+
+Check for upgradable packages.
+
+```bash
+quasar upgrade
+```
+
+Perform the actual upgrade
+
+```bash
+quasar upgrade --install
 ```
