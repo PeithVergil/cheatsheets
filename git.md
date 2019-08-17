@@ -19,12 +19,23 @@ Use a different SSH key.
 git config core.sshCommand "ssh -i /path/to/sshkey -F /dev/null"
 ```
 
+Change remote URL.
+
+```bash
+git remote set-url origin https://github.com/USERNAME/REPOSITORY.git
+```
+
 ## Viewing revisions
     git log
     git log --graph
     git log --oneline
     git log --reverse
 
+Show the list of files that was changed for a certain commit.
+
+```bash
+git show --name-only 6df7741679461bebe013d5d94d2ce5d841a9d9ad
+```
 
 Remove a file from the repository.
 
