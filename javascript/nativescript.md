@@ -4,6 +4,8 @@ NativeScript
 
 ## Installation
 
+Install the CLI.
+
 ```bash
 npm install -g nativescript
 ```
@@ -28,4 +30,22 @@ npm install
 
 # Run project on Android.
 tns run android --bundle
+```
+
+## NativeScript-Vue
+
+#### Installation
+
+Install the CLI.
+
+```bash
+npm install -g @vue/cli @vue/cli-init
+```
+
+#### Creating a Project
+
+Start a new project.
+
+```bash
+vue init nativescript-vue/vue-cli-template MySampleProject
 ```
