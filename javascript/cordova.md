@@ -18,7 +18,21 @@ Installation
 `cordova platform add android`
 
 #### Running the app
-`cordova run android`
+```bash
+cordova run android
+cordova run android --debug
+cordova run android --release
+```
+
+
+Plugins
+--------------------------------------------------
+
+Installing a plugin.
+
+```bash
+cordova plugin add cordova-plugin-splashscreen
+```
 
 
 Ionic Framework
