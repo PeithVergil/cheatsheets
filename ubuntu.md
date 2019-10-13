@@ -52,6 +52,9 @@ Users and Groups
 #### Change owner of file or folder
 `sudo chown -R root:root /home/username/`
 
+#### Switch to root user
+`sudo -i`
+
 
 Packages
 --------------------------------------------------
