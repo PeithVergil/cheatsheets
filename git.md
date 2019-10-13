@@ -49,6 +49,12 @@ Remove a directory from the repository.
 git rm --cached -r mydirectory
 ```
 
+## Renaming a tracked file
+
+```sh
+git mv /path/to/file.txt /path/to/newfile.txt
+```
+
 
 Branches
 --------------------------------------------------
