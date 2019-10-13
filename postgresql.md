@@ -7,6 +7,22 @@ Installation
 `sudo apt-get install postgresql postgresql-contrib`
 
 
+Initialization
+--------------------------------------------------
+
+```sh
+initdb /path/to/postgres/data
+```
+
+
+Running the server
+--------------------------------------------------
+
+```sh
+postgres -D /path/to/postgres/data
+```
+
+
 Clients
 --------------------------------------------------
 
@@ -17,6 +33,14 @@ Clients
 *   **-h, --host=HOSTNAME**
 *   **-p, --port=PORT**
 *   **-W, --password**
+
+##### Connect to the server under a given username
+```bash
+psql --username=[username] [database]
+
+# Example:
+psql --username=peith postgres
+```
 
 ##### Running psql
 `sudo -u postgres psql`
@@ -76,6 +100,15 @@ ALTER ROLE [myusername] WITH PASSWORD '[mypassword]';
 
 #### Granting privileges to the new user
 `[mydatabase]=# GRANT ALL ON DATABASE mydatabase TO [myusername];`
+`[mydatabase]=# GRANT ALL PRIVILEGES ON DATABASE [mydatabase] TO [myusername];`
+
+```sql
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA [mydatabase] TO [myusername];
+```
+
+```sql
+GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA [mydatabase] TO [myusername];
+```
 
 #### Display a list of roles
 `[mydatabase]=# \du`
@@ -126,6 +159,9 @@ Tables
 
 ##### Dropping constraint
 `ALTER TABLE [mytable] DROP CONSTRAINT "[constraint_name]";`
+
+#### Dropping table
+`DROP TABLE order CASCADE`
 
 
 Views
