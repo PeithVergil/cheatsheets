@@ -56,6 +56,19 @@ git mv /path/to/file.txt /path/to/newfile.txt
 ```
 
 
+Remove a file from the repository.
+
+```sh
+git rm --cached myfile.txt
+```
+
+Remove a directory from the repository.
+
+```sh
+git rm --cached -r mydirectory
+```
+
+
 Branches
 --------------------------------------------------
 #### Merging branches
