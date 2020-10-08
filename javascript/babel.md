@@ -10,7 +10,8 @@ Babel CLI
 Install the `babel` command line tool.
 
 ```bash
-npm install --save-dev babel-cli
+npm install --save-dev @babel/core @babel/cli @babel/preset-env
+npm install --save @babel/polyfill
 ```
 
 Compile a single file.
