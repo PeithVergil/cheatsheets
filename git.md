@@ -19,6 +19,13 @@ Use a different SSH key.
 git config core.sshCommand "ssh -i /path/to/sshkey -F /dev/null"
 ```
 
+Add remote URL.
+
+```bash
+git remote add origin https://github.com/USERNAME/REPOSITORY.git
+git push -u origin master
+```
+
 Change remote URL.
 
 ```bash
