@@ -110,6 +110,63 @@ Save a running container into a new image.
 docker commit mycontainer mycontainer:latest
 ```
 
+#### Volumes
+
+Create a **named volume**.
+
+```bash
+docker volume create myvolume
+```
+
+Mount a **named volume**.
+
+```bash
+docker run -dp 8000:8000 -v myvolume:/etc/myvolume myapplication
+```
+
+Display **named volume** info.
+
+```bash
+docker volume inspect myvolume
+```
+
+Watch container logs.
+
+```bash
+docker logs -f myvolume
+```
+
+#### Networking
+
+Create a network.
+
+```bash
+docker network create mynetwork
+```
+
+Attach the network.
+
+```bash
+docker run -d --name mydb --network mynetwork -v myvolume:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=abcdef mariadb:latest
+
+# OR
+docker run -d --name mydb --network mynetwork -v /path/to/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=abcdef mariadb:latest
+```
+
+Try connecting to the container.
+
+```bash
+docker exec -it mydb mysql -p
+```
+
+#### Logs
+
+Display the logs of a container _(ID: 4c690aaba373)_.
+
+```bash
+docker logs 4c690aaba373
+```
+
 
 Docker Compose
 ==============
