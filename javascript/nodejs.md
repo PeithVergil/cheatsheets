@@ -1,19 +1,18 @@
 Node.js
 =======
 
-
 Installation
 --------------------------------------------------
 
-Install the [Node Version Manager](https://github.com/creationix/nvm). Change the version number (v0.33.11) to the latest value.
+Install the [Node Version Manager](https://github.com/nvm-sh/nvm). Change the version number (v0.33.11) to the latest value.
 
-```sh
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+```shell
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 ```
 
 Display all versions available for installation.
 
-```sh
+```shell
 nvm ls-remote
 ```
 
@@ -47,12 +46,6 @@ Use `nvm` to activate the installed `node`.
 nvm use node
 ```
 
-Display all installed versions.
-
-```sh
-nvm ls
-```
-
 Use `nvm` to display the current active version.
 
 ```sh
@@ -70,7 +63,6 @@ Uninstall an old installation.
 ```sh
 nvm uninstall v9.4.0
 ```
-
 
 To install `nodejs` using the Ubuntu package manager:
 
@@ -95,7 +87,6 @@ sudo apt-get install nodejs
 ```sh
 sudo ln -s /usr/bin/nodejs /usr/bin/node
 ```
-
 
 Installing packages
 --------------------------------------------------
@@ -123,7 +114,6 @@ Updating global packages.
 ```sh
 npm update -g --prefix=/path/to/directory
 ```
-
 
 Change the `npm` prefix
 --------------------------------------------------

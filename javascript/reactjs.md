@@ -1,5 +1,5 @@
-React.js
-========
+ReactJS
+=======
 
 
 Installation
