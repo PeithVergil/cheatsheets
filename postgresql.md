@@ -120,6 +120,10 @@ Databases
 #### Creating a database
 `sudo -u postgres createdb [mydatabase]`
 
+```bash
+createdb --username=[myusername] --password [mydatabase]
+```
+
 #### Deleting a database
 `sudo -u postgres dropdb [mydatabase]`
 
