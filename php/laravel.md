@@ -140,7 +140,19 @@ sudo apt-get install -y php7.3
 Install some PHP 7.3 extensions.
 
 ```bash
-sudo apt-get install -y php7.3-gd php7.3-xml php7.3-zip php7.3-curl php7.3-mysql php7.3-mbstring
+sudo apt-get install -y php7.3-gd php7.3-xml php7.3-zip php7.3-curl php7.3-intl php7.3-mysql php7.3-mbstring
+```
+
+Install PHP 7.4.
+
+```bash
+sudo apt-get install -y php7.4 php7.4-cli php7.4-common
+```
+
+Install some PHP 7.4 extensions.
+
+```bash
+sudo apt-get install -y php7.4-gd php7.4-fpm php7.4-xml php7.4-zip php7.4-curl php7.4-intl php7.4-mysql php7.4-mbstring
 ```
 
 
