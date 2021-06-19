@@ -4,7 +4,7 @@ youtube-dl
 
 Installation
 --------------------------------------------------
-`pip install youtube_dl`
+`pip install youtube-dl`
 
 
 Show supported sites

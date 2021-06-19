@@ -50,3 +50,13 @@ Installing from a requirements file
 Display package info and dependencies
 --------------------------------------------------
 `pip show django-celery`
+
+
+Locale Issue
+--------------------------------------------------
+
+```sh
+export LC_ALL="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
+sudo dpkg-reconfigure locales
+```

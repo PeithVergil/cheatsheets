@@ -1,0 +1,63 @@
+<meta charset="utf-8">
+
+<style>
+.md code > .output { font-weight: bold; background: #ECECEC; margin-left: -20px; padding: 5px 0 5px 20px; }
+</style>
+
+**Babel**
+
+Installation
+============================================================
+
+Install using `pip`.
+
+~~~ bash
+pip install Babel
+~~~
+
+
+Usage
+============================================================
+
+Show all known locales.
+
+~~~ bash
+pybabel --list-locales
+~~~
+
+Show all known locales.
+
+~~~ python
+import gettext
+
+_ = gettext.gettext
+
+print(_('Hello, World!'))
+~~~
+
+Create the initial message catalog.
+
+~~~ bash
+pybabel extract . -o locale/base.pot
+~~~
+
+Create the translations catalog.
+
+~~~ bash
+pybabel init -l en_PH ja_JP -i locale/base.pot -d locale
+~~~
+
+Update existing translations.
+
+~~~ bash
+pybabel update -l en_PH ja_JP -i locale/base.pot -d locale
+~~~
+
+Compile the translation files into `*.mo` files.
+
+~~~ bash
+pybabel compile -d locale
+~~~
+
+
+<!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?"></script>

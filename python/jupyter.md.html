@@ -1,0 +1,75 @@
+<meta charset="utf-8">
+
+<style>
+.md code > .output { font-weight: bold; background: #ECECEC; margin-left: -20px; padding: 5px 0 5px 20px; }
+</style>
+
+**Jupyter**
+
+# Installation
+
+Install using **pip**.
+
+~~~ bash
+pip install jupyter
+~~~
+
+Install using **conda**.
+
+~~~ bash
+conda install jupyter
+~~~
+
+# Usage
+
+Starting the notebook server will make it accessible through: http://localhost:8888
+
+~~~ bash
+jupyter notebook
+~~~
+
+By default, the server will listen on port **8888**. To change the port, pass the **--port** option:
+
+~~~ bash
+jupyter notebook --port 9999
+~~~
+
+# Extensions
+
+## Cython
+
+Install using **pip**.
+
+~~~ bash
+pip install cython
+~~~
+
+Install using **conda**.
+
+~~~ bash
+conda install cython
+~~~
+
+Load the Cython extension for Jupyter on a separate cell.
+
+~~~ Python
+%load_ext Cython
+~~~
+
+Then, on another cell, put the **%%cython** magic command at the very top.
+
+~~~ Python
+%%cython --annotate
+
+def cyfib(int limit):
+    cdef int x = 0
+    cdef int y = 1
+
+    results = []
+    while x <= limit:
+        results.append(x)
+        x, y = y, x + y
+    return results
+~~~
+
+<!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?"></script>
