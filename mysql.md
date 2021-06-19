@@ -193,3 +193,15 @@ Display collations.
 ```sql
 SHOW VARIABLES LIKE 'collation%';
 ```
+
+Troubleshooting
+--------------------------------------------------
+
+Error: "Specified key was too long; max key length is 767 bytes"
+
+```
+innodb_default_row_format=dynamic
+innodb_file_format=barracuda
+innodb_file_per_table=true
+innodb_large_prefix=true
+```
