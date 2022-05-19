@@ -30,6 +30,7 @@ Remove an image _(ID: f2a91732366c)_.
 
 ```bash
 docker image rm f2a91732366c
+docker image rm f2a91732366c --force
 ```
 
 #### Container
@@ -178,9 +179,39 @@ Installation
 pip install docker-compose
 ```
 
+Example compose file
+--------------------
+
+```yml
+version: "3.9"
+services:
+  adminer:
+    image: adminer
+    ports:
+      - "8085:80"
+  web:
+    image: php74
+    ports:
+      - "8000:80"
+    volumes:
+      - ./src:/var/www/html
+  db:
+    image: mariadb
+    volumes:
+      - ./data:/var/lib/mysql
+```
+
 Usage
 -----
 
 ```bash
 docker-compose up
+```
+
+```bash
+docker-compose ps
+```
+
+```bash
+docker-compose down
 ```
