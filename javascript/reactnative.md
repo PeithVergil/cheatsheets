@@ -8,9 +8,10 @@ Android Development Environment
 [Download Android Studio](https://developer.android.com/studio) and add Android SDK to system path.
 
 ```bash
-export ANDROID_HOME=/path/to/Android/sdk
+export ANDROID_HOME=$HOME/Library/Android/sdk
 
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 ```
 
 [Download Gradle](https://gradle.org/releases/) and add to system path.
@@ -26,11 +27,27 @@ export JAVA_HOME=/path/to/jdk8/Contents/Home
 ```
 
 
+iOS Development Environment
+---------------------------
+
+Install CocoaPods.
+
+```bash
+sudo gem install cocoapods
+```
+
+
 Installation
 --------------------------------------------------
 
 ```bash
 npm install -g react-native-cli
+```
+
+Uninstalling an existing package.
+
+```bash
+npm uninstall -g react-native-cli @react-native-community/cli
 ```
 
 Usage
@@ -39,7 +56,7 @@ Usage
 Create a new project.
 
 ```bash
-react-native init HelloReactNative
+npx react-native@latest init HelloReactNative
 ```
 
 Run the new project.
@@ -47,5 +64,6 @@ Run the new project.
 ```bash
 cd HelloReactNative
 
-react-native run-android
+npm run ios
+npm run android
 ```
