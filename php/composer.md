@@ -41,3 +41,9 @@ Creating a `composer.json`:
 ```bash
 composer init
 ```
+
+Install a single package.
+
+```bash
+composer require firebase/php-jwt
+```
