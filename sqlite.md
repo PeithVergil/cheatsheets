@@ -5,6 +5,10 @@ Open a database (mydatabase.db).
 
 ```bash
 sqlite3 mydatabase.db
+
+# Better output formatting
+sqlite3 -table mydatabase.db
+sqlite3 -column -header mydatabase.db
 ```
 
 List tables.
