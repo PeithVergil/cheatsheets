@@ -7,7 +7,7 @@ Installation
 Install the [Node Version Manager](https://github.com/nvm-sh/nvm). Change the version number (v0.33.11) to the latest value.
 
 ```shell
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 ```
 
 Display all versions available for installation.
